@@ -8,8 +8,8 @@ const specs = [
   "Cloud",
   "Full Stack",
   "DevOps",
-  "Product Management",
-  "UX/UI Design",
+  "Product",
+  "UX/UI",
   "Cybersecurity",
 ];
 
@@ -24,15 +24,9 @@ const SpecializationsSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-14"
         >
-          <p className="text-sm font-medium text-azul-profundo/70 tracking-widest uppercase mb-3">
-            Áreas de especialización
-          </p>
           <h2 className="font-display text-4xl md:text-5xl font-bold text-azul-profundo leading-tight">
-            Somos especialistas
+            Hablamos tu idioma.
           </h2>
-          <p className="mt-4 text-lg text-azul-profundo/60 max-w-xl mx-auto">
-            Más de 10 años de experiencia en las siguientes tecnologías
-          </p>
         </motion.div>
 
         <div className="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto">
@@ -49,16 +43,6 @@ const SpecializationsSection = () => {
             </motion.span>
           ))}
         </div>
-
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="text-center mt-8 text-azul-profundo/50 text-sm"
-        >
-          Y muchas más.
-        </motion.p>
       </div>
     </section>
   );
