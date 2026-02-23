@@ -23,25 +23,18 @@ const HeroSection = () => {
               Tu partner estratégico
             </p>
             <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] text-foreground mb-6">
-              Decisiones ágiles, humanas y estratégicas.
+              El talento correcto, en el momento justo.
             </h1>
             <p className="text-lg text-muted-foreground max-w-xl mb-8 leading-relaxed">
-              Conectamos tus objetivos de negocio con el talento que los hace realidad. 
-              Identificamos el match cultural, las habilidades técnicas y la energía 
-              necesaria para acelerar tu crecimiento.
+              Sabemos encontrar a las personas que tu negocio necesita. 
+              Lo demás, lo conversamos.
             </p>
             <div className="flex flex-wrap gap-4">
               <a
                 href="#contacto"
                 className="inline-flex items-center px-8 py-3.5 rounded-full bg-foreground text-background font-medium text-sm hover:opacity-90 transition-opacity"
               >
-                Agendar una charla
-              </a>
-              <a
-                href="#metodologia"
-                className="inline-flex items-center px-8 py-3.5 rounded-full border border-foreground/20 text-foreground font-medium text-sm hover:border-foreground/50 transition-colors"
-              >
-                Conocer más
+                Conversemos
               </a>
             </div>
           </motion.div>
