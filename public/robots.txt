@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://talent-weave-works.lovable.app/sitemap.xml
+Sitemap: https://meiba.com.ar/sitemap.xml

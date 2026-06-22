@@ -1,0 +1,16 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="meibaAccent" x1="0" y1="64" x2="64" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5EA8F7"/>
+      <stop offset="0.55" stop-color="#F6DCC0"/>
+      <stop offset="1" stop-color="#F5C4C2"/>
+    </linearGradient>
+  </defs>
+  <!-- Brand tile: azul profundo -->
+  <rect width="64" height="64" rx="15" fill="#061421"/>
+  <!-- Geometric "m" monogram -->
+  <path d="M18 46 V30 a7 7 0 0 1 14 0 V46 M32 30 a7 7 0 0 1 14 0 V46"
+        stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Brand gradient accent -->
+  <rect x="44" y="12" width="8" height="8" rx="2" fill="url(#meibaAccent)"/>
+</svg>
