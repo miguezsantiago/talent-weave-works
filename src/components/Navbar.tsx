@@ -1,12 +1,14 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const navItems = [
-  { label: "Nosotros", href: "#valores" },
-  { label: "Metodología", href: "#metodologia" },
-  { label: "Servicios", href: "#servicios" },
-  { label: "Especialidades", href: "#especialidades" },
+  { label: "Nosotros", href: "/#valores" },
+  { label: "Metodología", href: "/#metodologia" },
+  { label: "Servicios", href: "/#servicios" },
+  { label: "Especialidades", href: "/#especialidades" },
+  { label: "Blog", href: "/blog" },
 ];
 
 const Navbar = () => {
@@ -16,10 +18,10 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="font-display text-2xl font-bold tracking-tight text-foreground">
+        <Link to="/" className="font-display text-2xl font-bold tracking-tight text-foreground">
           meiba<span className="text-xs align-super">®</span>{" "}
           <span className="font-body font-normal text-lg">Talent</span>
-        </a>
+        </Link>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
@@ -33,7 +35,7 @@ const Navbar = () => {
             </a>
           ))}
           <a
-            href="#contacto"
+            href="/#contacto"
             className="text-sm font-medium px-5 py-2.5 rounded-full border border-foreground text-foreground hover:bg-foreground hover:text-background transition-all"
           >
             Contacto
@@ -71,7 +73,7 @@ const Navbar = () => {
                 </a>
               ))}
               <a
-                href="#contacto"
+                href="/#contacto"
                 onClick={() => setIsOpen(false)}
                 className="text-base font-medium px-5 py-2.5 rounded-full border border-foreground text-foreground text-center hover:bg-foreground hover:text-background transition-all"
               >
