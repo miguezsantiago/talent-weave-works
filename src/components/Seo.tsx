@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { siteConfig } from "@/config/site";
+import { siteConfig, isPreviewHost } from "@/config/site";
 
 interface SeoProps {
   title: string;
@@ -70,7 +70,9 @@ const Seo = ({ title, description, path = "/", image, type = "website", article,
   useEffect(() => {
     document.title = fullTitle;
     upsertMeta("name", "description", desc);
-    upsertMeta("name", "robots", noindex ? "noindex, nofollow" : "index, follow");
+    // En previews (revisión) forzamos noindex para que Google no indexe borradores.
+    const shouldNoindex = noindex || isPreviewHost();
+    upsertMeta("name", "robots", shouldNoindex ? "noindex, nofollow" : "index, follow");
     upsertCanonical(url);
 
     upsertMeta("property", "og:type", type);

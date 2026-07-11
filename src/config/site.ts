@@ -40,6 +40,23 @@ export const siteConfig = {
   },
 };
 
+/**
+ * Hosts donde el sitio es "producción real". Cualquier otro host (las preview
+ * URLs de Cloudflare para ramas, ej: content-blog-x.talent-weave-works.pages.dev)
+ * se considera un entorno de revisión y se marca noindex, así Google no indexa
+ * los borradores ni te generan contenido duplicado.
+ */
+export const productionHosts = [
+  "meiba.com.ar",
+  "www.meiba.com.ar",
+  "talent-weave-works.pages.dev",
+];
+
+export function isPreviewHost(): boolean {
+  if (typeof window === "undefined") return false;
+  return !productionHosts.includes(window.location.hostname);
+}
+
 /** Mensaje pre-armado para el botón de WhatsApp. */
 export const whatsappMessage =
   "Hola Meiba 👋 Quiero contar qué necesita mi equipo y conocer cómo trabajan.";
