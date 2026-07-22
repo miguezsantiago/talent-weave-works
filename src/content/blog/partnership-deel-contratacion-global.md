@@ -23,10 +23,9 @@ Para el mercado argentino esto no es un detalle: buena parte del talento tech lo
 
 Hasta ahora el proceso venía en dos tramos separados: nosotros te presentábamos la terna en 72 horas, cerrabas al candidato… y después tu equipo tenía que resolver solo el alta, el contrato y los pagos. Con este partnership, los dos tramos quedan conectados:
 
-1. **Del candidato aceptado al contrato firmado, sin baches.** El pase de la selección a la contratación deja de ser un proyecto aparte: te acompañamos en el onboarding dentro de Deel.
+1. **Introducción directa al equipo de Deel.** Cerrado el candidato, te conectamos con Deel para que el alta arranque de una, sin empezar la relación comercial de cero.
 2. **Contratás en Argentina y LATAM sin entidad local.** Si tu empresa está en el exterior, podés incorporar el talento que te presentamos sin armar estructura legal acá.
-3. **Un solo interlocutor durante todo el proceso.** Cualquier fricción entre la búsqueda y la contratación la destrabamos nosotros con Deel directamente.
-4. [Beneficio comercial del partnership para clientes de Meiba — ej: descuento en fees de Deel, meses bonificados: confirmar condiciones]
+3. **Condiciones preferenciales para clientes de Meiba.** Los deals que llegan por nuestro partnership acceden a descuentos en Deel, con condiciones que se definen caso por caso según el tipo y el volumen de contratación.
 
 El resultado: el tiempo entre "aceptó la oferta" y "está trabajando y cobrando" se acorta, y el riesgo de compliance deja de ser tu problema.
 
@@ -36,6 +35,6 @@ Si estás por sumar talento tech —desde Argentina para el mundo, o desde el mu
 
 1. Nos [contás qué perfil necesitás](/#contacto).
 2. Te presentamos la primera terna en 72 horas, con garantía de 90 días.
-3. Elegido el candidato, la contratación sale por Deel con nuestro acompañamiento.
+3. Elegido el candidato, te presentamos con Deel para que la contratación salga por ahí, con las condiciones del partnership.
 
 Escribinos a [contacto@meiba.com.ar](mailto:contacto@meiba.com.ar) o dejanos tus datos en el [formulario](/#contacto) y te contactamos en menos de 24 horas hábiles.
