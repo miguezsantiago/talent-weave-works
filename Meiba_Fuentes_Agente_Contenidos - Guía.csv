@@ -1,0 +1,11 @@
+Fuentes para el agente de contenidos · Meiba Talent,
+"Decisiones ágiles, humanas y estratégicas.",
+,
+Cómo usar este archivo,"Cada pestaña (Argentina / LATAM / Global) lista fuentes que el agente puede monitorear para nutrir el blog y LinkedIn. Priorizá el bloque Argentina para el contenido más cercano al cliente, y usá LATAM/Global como capa de autoridad y contexto."
+Columna: Tipo,Portal de empleo · Consultora RRHH · Medio · Comunidad · Cámara/Institucional · Analista · Oficial · Plataforma.
+Columna: Accesibilidad,"Abierta = libre lectura. Login = requiere registro gratuito. Paywall/Gated = contenido pago o descarga con formulario. Mixta = parte abierta, parte cerrada. Las celdas marcadas en rosado indican acceso restringido: para esas, apuntar al resumen o nota de prensa, no al reporte completo."
+Columna: Cómo ingerirla,"RSS (blog/medio) = feed listo para automatizar. Descarga = PDF/informe periódico. Dataset/CSV/API = datos estructurados. Scraping = sin feed, requiere lectura de la página. Gated = descarga con registro."
+Columna: Prioridad Meiba,"Alta (celda en durazno) = núcleo del agente, fuentes frescas y muy citables. Media = munición de respaldo y contexto."
+Recomendación de núcleo,Argentina: Bumeran + SysArmy/OpenQube + Randstad + Adecco + medios (Infobae/iProfesional/Forbes). Global: LinkedIn + Josh Bersin + Deloitte + WEF + ManpowerGroup. El resto complementa.
+Nota editorial,"El agente debe traducir estos datos a la voz de Meiba: directa, experta y accesible, con punto de vista. Evitar jerga de paper y las palabras prohibidas del manual de marca."
+Nota de vigencia,"Los datos de mercado (salarios, escasez de talento) cambian rápido: verificar fecha de publicación antes de citar. Última revisión de fuentes: julio 2026."
