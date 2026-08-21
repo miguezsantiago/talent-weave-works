@@ -7,6 +7,7 @@ import { Loader2, CheckCircle2, Send } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { trackLead } from "@/lib/analytics";
 import { getUtm } from "@/lib/utm";
+import { siteConfig } from "@/config/site";
 
 const schema = z.object({
   name: z.string().trim().min(2, "Contanos tu nombre"),
@@ -36,7 +37,11 @@ const LeadForm = () => {
     if (values.website) return; // honeypot completado => bot
 
     const utm = getUtm();
-    const { error } = await supabase.from("leads").insert({
+    const pagePath = window.location.pathname;
+
+    // Log en Supabase: best-effort, no bloquea el envío si falla o si el
+    // proyecto no está accesible. La notificación real va por Web3Forms abajo.
+    void supabase.from("leads").insert({
       name: values.name,
       email: values.email,
       company: values.company || null,
@@ -44,13 +49,40 @@ const LeadForm = () => {
       role_searched: values.role_searched || null,
       message: values.message || null,
       source: "form",
-      page_path: window.location.pathname,
+      page_path: pagePath,
       utm_source: utm.utm_source ?? null,
       utm_medium: utm.utm_medium ?? null,
       utm_campaign: utm.utm_campaign ?? null,
     });
 
-    if (error) {
+    if (!siteConfig.web3formsAccessKey) {
+      toast.error("El formulario no está configurado para enviar mails todavía.");
+      return;
+    }
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: siteConfig.web3formsAccessKey,
+          subject: `Nuevo lead: ${values.name}${values.company ? ` (${values.company})` : ""}`,
+          from_name: "Meiba Web",
+          name: values.name,
+          email: values.email,
+          company: values.company || undefined,
+          phone: values.phone || undefined,
+          role_searched: values.role_searched || undefined,
+          message: values.message || undefined,
+          utm_source: utm.utm_source ?? undefined,
+          utm_medium: utm.utm_medium ?? undefined,
+          utm_campaign: utm.utm_campaign ?? undefined,
+          page_path: pagePath,
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok || !data.success) throw new Error(data.message || "web3forms error");
+    } catch {
       toast.error("No pudimos enviar el mensaje. Probá de nuevo o escribinos por mail.");
       return;
     }
