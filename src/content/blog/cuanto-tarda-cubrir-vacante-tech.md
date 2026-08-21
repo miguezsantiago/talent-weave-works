@@ -1,6 +1,7 @@
 ---
 title: Cuánto tarda cubrir una vacante tech (y cómo acelerarlo)
 description: El tiempo de contratación promedio para roles tecnológicos y las palancas concretas para reducirlo sin bajar la calidad del candidato.
+seoTitle: Cuánto tarda cubrir una vacante tech
 date: 2026-05-22
 author: Meiba Talent
 tags: [recruiting, metricas, tech]

@@ -28,9 +28,12 @@ const posts = readdirSync(blogDir)
   }))
   .sort((a, b) => (a.date < b.date ? 1 : -1));
 
+const buildDate = new Date().toISOString().slice(0, 10);
+const latestPostDate = posts[0]?.date || buildDate;
+
 const urls = [
-  { loc: `${BASE}/`, changefreq: "weekly", priority: "1.0" },
-  { loc: `${BASE}/blog`, changefreq: "weekly", priority: "0.8" },
+  { loc: `${BASE}/`, changefreq: "weekly", priority: "1.0", lastmod: buildDate },
+  { loc: `${BASE}/blog`, changefreq: "weekly", priority: "0.8", lastmod: latestPostDate },
   ...posts.map((p) => ({
     loc: `${BASE}/blog/${p.slug}`,
     changefreq: "monthly",

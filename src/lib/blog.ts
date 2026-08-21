@@ -11,6 +11,9 @@
  *   date: 2026-06-20
  *   author: Meiba Talent
  *   tags: [recruiting, tech, argentina]
+ *   seoTitle: Opcional. Versión corta del title para el tag <title> (<=60 caracteres con " | Meiba Talent" incluido). Si no se define, se usa title.
+ *   seoDescription: Opcional. Versión para meta description si description queda larga (<=155 caracteres). Si no se define, se usa description.
+ *   image: Opcional. Ruta absoluta desde la raíz (ej: /blog/mi-post-og.jpg) para la imagen de Open Graph/Twitter de este post. Si no se define, se usa la imagen default del sitio.
  *   ---
  *   # Contenido en markdown...
  */
@@ -23,6 +26,9 @@ export interface PostMeta {
   author: string;
   tags: string[];
   readingMinutes: number;
+  seoTitle?: string;
+  seoDescription?: string;
+  image?: string;
 }
 
 export interface Post extends PostMeta {
@@ -81,6 +87,9 @@ function buildPost(path: string, raw: string): Post {
     author: data.author ?? "Meiba Talent",
     tags: parseTags(data.tags),
     readingMinutes: estimateReadingMinutes(body),
+    seoTitle: data.seoTitle,
+    seoDescription: data.seoDescription,
+    image: data.image,
     content: body,
   };
 }

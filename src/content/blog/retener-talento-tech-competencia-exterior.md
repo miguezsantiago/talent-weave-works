@@ -1,6 +1,7 @@
 ---
 title: Cómo retener talento tech cuando te lo pelean empresas del exterior
 description: Estrategias concretas para retener developers y perfiles tech en Argentina frente a ofertas en dólares de compañías del exterior.
+seoTitle: Retener talento tech: ofertas del exterior
 date: 2026-07-11
 author: Meiba Talent
 tags: [retencion, tech, argentina]

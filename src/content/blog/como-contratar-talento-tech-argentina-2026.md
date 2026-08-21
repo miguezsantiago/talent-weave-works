@@ -1,6 +1,7 @@
 ---
 title: Cómo contratar talento tech en Argentina en 2026
 description: Guía práctica para fundadores y líderes de equipo que necesitan sumar talento tecnológico en Argentina sin quemar meses ni presupuesto.
+seoTitle: Contratar talento tech en Argentina 2026
 date: 2026-06-10
 author: Meiba Talent
 tags: [recruiting, tech, argentina]

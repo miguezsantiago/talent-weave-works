@@ -80,10 +80,13 @@ const Seo = ({ title, description, path = "/", image, type = "website", article,
     upsertMeta("property", "og:title", fullTitle);
     upsertMeta("property", "og:description", desc);
     upsertMeta("property", "og:image", img);
+    upsertMeta("property", "og:image:width", "1200");
+    upsertMeta("property", "og:image:height", "630");
 
     upsertMeta("name", "twitter:title", fullTitle);
     upsertMeta("name", "twitter:description", desc);
     upsertMeta("name", "twitter:image", img);
+    upsertMeta("name", "twitter:image:alt", fullTitle);
 
     upsertJsonLd(
       "ld-article",
@@ -106,7 +109,22 @@ const Seo = ({ title, description, path = "/", image, type = "website", article,
           }
         : null,
     );
-  }, [fullTitle, desc, url, img, type, noindex, title, article]);
+
+    upsertJsonLd(
+      "ld-breadcrumb",
+      type === "article"
+        ? {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Inicio", item: siteConfig.url },
+              { "@type": "ListItem", position: 2, name: "Blog", item: `${siteConfig.url}/blog` },
+              { "@type": "ListItem", position: 3, name: title, item: url },
+            ],
+          }
+        : null,
+    );
+  }, [fullTitle, desc, url, img, type, noindex, title, article, path]);
 
   return null;
 };

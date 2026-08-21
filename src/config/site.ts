@@ -13,6 +13,9 @@
  *   VITE_META_PIXEL_ID       -> Meta/Facebook Pixel (ej: 1234567890)
  *   VITE_GOOGLE_ADS_ID       -> Google Ads (ej: AW-XXXXXXXXX)
  *   VITE_GOOGLE_ADS_LEAD_LABEL -> label de conversión de Google Ads para "lead"
+ *   VITE_WEB3FORMS_ACCESS_KEY -> key de https://web3forms.com para que el form
+ *                               mande mail directo (sin backend propio). Vacío =
+ *                               el form no puede notificar por mail.
  */
 
 const env = import.meta.env;
@@ -26,6 +29,7 @@ export const siteConfig = {
   contactEmail: env.VITE_CONTACT_EMAIL ?? "contacto@meiba.com.ar",
   whatsappNumber: env.VITE_WHATSAPP_NUMBER ?? "",
   calendarUrl: env.VITE_CALENDAR_URL ?? "",
+  web3formsAccessKey: env.VITE_WEB3FORMS_ACCESS_KEY ?? "",
 
   social: {
     linkedin: "https://www.linkedin.com/company/meibatalent",

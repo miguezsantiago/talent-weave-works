@@ -1,6 +1,7 @@
 ---
 title: Sueldos tech en Argentina 2026: cómo armar una banda salarial competitiva
 description: Guía para definir bandas salariales que atraigan talento tecnológico en Argentina sin sobrepagar, en un mercado que se referencia en dólares.
+seoTitle: Sueldos tech Argentina 2026: banda salarial
 date: 2026-07-09
 author: Meiba Talent
 tags: [sueldos, tech, argentina]

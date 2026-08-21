@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import Seo from "@/components/Seo";
 import NotFound from "@/pages/NotFound";
 import { getPostBySlug, formatDate } from "@/lib/blog";
+import { siteConfig } from "@/config/site";
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -17,9 +18,10 @@ const BlogPost = () => {
   return (
     <div className="min-h-screen">
       <Seo
-        title={post.title}
-        description={post.description}
+        title={post.seoTitle ?? post.title}
+        description={post.seoDescription ?? post.description}
         path={`/blog/${post.slug}`}
+        image={post.image ? `${siteConfig.url}${post.image}` : undefined}
         type="article"
         article={{ publishedTime: post.date, author: post.author, tags: post.tags }}
       />

@@ -1,6 +1,8 @@
 ---
 title: Nos asociamos con Deel: buscamos el talento, ellos resuelven la contratación
 description: Meiba Talent y Deel se asocian para cubrir el proceso completo: encontramos al candidato en 72hs y la contratación, el payroll y el compliance quedan resueltos en la misma jugada.
+seoTitle: Meiba x Deel: contratación global sin fricción
+seoDescription: Meiba Talent y Deel se asocian: encontramos al candidato en 72hs y ellos resuelven contratación, payroll y compliance.
 date: 2026-07-22
 author: Meiba Talent
 tags: [partnership, deel, contratacion-global]
