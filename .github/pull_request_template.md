@@ -18,4 +18,4 @@
 - [ ] Aprobado por Santi
 - [ ] Aprobado por el socio
 
-> Al mergear a `main`, Cloudflare publica automáticamente en meiba.com.ar y el sitemap se actualiza solo.
+> Al mergear a `main`, Cloudflare publica automáticamente en meibatalent.com.ar y el sitemap se actualiza solo.

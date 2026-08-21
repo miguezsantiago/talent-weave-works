@@ -39,4 +39,4 @@ Si estás por sumar talento tech —desde Argentina para el mundo, o desde el mu
 2. Te presentamos la primera terna en 72 horas, con garantía de 90 días.
 3. Elegido el candidato, te presentamos con Deel para que la contratación salga por ahí, con las condiciones del partnership.
 
-Escribinos a [contacto@meiba.com.ar](mailto:contacto@meiba.com.ar) o dejanos tus datos en el [formulario](/#contacto) y te contactamos en menos de 24 horas hábiles.
+Escribinos a [contacto@meibatalent.com.ar](mailto:contacto@meibatalent.com.ar) o dejanos tus datos en el [formulario](/#contacto) y te contactamos en menos de 24 horas hábiles.

@@ -9,7 +9,7 @@ import { dirname, join } from "node:path";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, "..");
-const BASE = (process.env.VITE_SITE_URL || "https://meiba.com.ar").replace(/\/$/, "");
+const BASE = (process.env.VITE_SITE_URL || "https://meibatalent.com.ar").replace(/\/$/, "");
 const blogDir = join(root, "src", "content", "blog");
 
 function frontmatterDate(raw) {

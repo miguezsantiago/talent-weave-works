@@ -15,7 +15,7 @@ Framework para que **Santi y el socio** revisen y curen cada post **antes** de q
 
 4. **Aprobar.** En el Pull Request de GitHub, cada uno da **Approve**. La regla de `main` exige **2 aprobaciones**, así que un solo OK no alcanza.
 
-5. **Publicar.** Se mergea el PR → Cloudflare publica en `meiba.com.ar` en minutos. El sitemap se actualiza solo.
+5. **Publicar.** Se mergea el PR → Cloudflare publica en `meibatalent.com.ar` en minutos. El sitemap se actualiza solo.
 
 ## Por qué este framework
 - **Ven la página real**, no código. Cero fricción técnica.

@@ -25,7 +25,7 @@ const root = join(__dirname, "..");
 const distDir = join(root, "dist");
 const blogDir = join(root, "src", "content", "blog");
 
-const SITE_URL = (process.env.VITE_SITE_URL || "https://meiba.com.ar").replace(/\/$/, "");
+const SITE_URL = (process.env.VITE_SITE_URL || "https://meibatalent.com.ar").replace(/\/$/, "");
 const SITE_NAME = "Meiba Talent";
 const DEFAULT_DESCRIPTION =
   "Meiba Talent conecta empresas tecnológicas con los mejores profesionales de Argentina. Headhunting ágil, humano y estratégico. Primera terna en 72hs.";

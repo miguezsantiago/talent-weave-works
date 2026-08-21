@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://meiba.com.ar/sitemap.xml
+Sitemap: https://meibatalent.com.ar/sitemap.xml

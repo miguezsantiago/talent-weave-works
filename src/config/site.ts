@@ -4,7 +4,7 @@
  * (archivo .env). Cambiás el valor ahí y no hace falta tocar el código.
  *
  * Variables disponibles (todas opcionales, con fallback sensato):
- *   VITE_SITE_URL            -> URL canónica del sitio (ej: https://meiba.com.ar)
+ *   VITE_SITE_URL            -> URL canónica del sitio (ej: https://meibatalent.com.ar)
  *   VITE_CONTACT_EMAIL       -> mail donde querés recibir contactos
  *   VITE_WHATSAPP_NUMBER     -> WhatsApp en formato internacional sin "+" ni espacios
  *                               (ej: 5491122334455). Vacío = se ocultan los botones de WhatsApp.
@@ -22,11 +22,11 @@ const env = import.meta.env;
 
 export const siteConfig = {
   name: "Meiba Talent",
-  url: (env.VITE_SITE_URL ?? "https://meiba.com.ar").replace(/\/$/, ""),
+  url: (env.VITE_SITE_URL ?? "https://meibatalent.com.ar").replace(/\/$/, ""),
   description:
     "Meiba Talent conecta empresas tecnológicas con los mejores profesionales de Argentina. Headhunting ágil, humano y estratégico. Primera terna en 72hs.",
 
-  contactEmail: env.VITE_CONTACT_EMAIL ?? "contacto@meiba.com.ar",
+  contactEmail: env.VITE_CONTACT_EMAIL ?? "contacto@meibatalent.com.ar",
   whatsappNumber: env.VITE_WHATSAPP_NUMBER ?? "",
   calendarUrl: env.VITE_CALENDAR_URL ?? "",
   web3formsAccessKey: env.VITE_WEB3FORMS_ACCESS_KEY ?? "",
@@ -51,8 +51,8 @@ export const siteConfig = {
  * los borradores ni te generan contenido duplicado.
  */
 export const productionHosts = [
-  "meiba.com.ar",
-  "www.meiba.com.ar",
+  "meibatalent.com.ar",
+  "www.meibatalent.com.ar",
   "talent-weave-works.pages.dev",
 ];
 
