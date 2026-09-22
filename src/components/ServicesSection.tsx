@@ -1,30 +1,26 @@
 import { motion } from "framer-motion";
-import { DollarSign, ShieldCheck, BriefcaseBusiness, Zap } from "lucide-react";
 
+// `accent` es el color del cuadrado de marca de cada servicio.
 const services = [
   {
-    icon: DollarSign,
-    title: "Success Fee",
-    description: "Sin costos iniciales ni retainers. Honorarios altamente competitivos que se adaptan a tus necesidades optimizando tus costos.",
-    accent: "border-l-primary",
+    title: "Trabajamos a riesgo",
+    description: "Sin costos iniciales ni retainers: solo cobramos si contratás a un candidato que te presentamos. Honorarios altamente competitivos que se adaptan a tus necesidades.",
+    accent: "bg-brand-gradient",
   },
   {
-    icon: ShieldCheck,
     title: "Garantía y seguimiento",
     description: "Acompañamiento posterior a la contratación y reposición sin costo si no se cumplen las expectativas dentro del plazo acordado.",
-    accent: "border-l-celeste",
+    accent: "bg-celeste",
   },
   {
-    icon: BriefcaseBusiness,
     title: "Expertise en reclutamiento",
     description: "Más de 10 años de experiencia encontrando a los profesionales que empujarán tu proyecto hacia el éxito.",
-    accent: "border-l-rosado",
+    accent: "bg-rosado",
   },
   {
-    icon: Zap,
     title: "Proceso ágil y transparente",
     description: "Status en tiempo real, informes de disponibilidad, benchmarks salariales y herramientas de selección potenciadas con IA.",
-    accent: "border-l-amarillo",
+    accent: "bg-amarillo",
   },
 ];
 
@@ -47,7 +43,7 @@ const ServicesSection = () => {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-14 max-w-6xl mx-auto">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
@@ -55,10 +51,17 @@ const ServicesSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`p-8 rounded-xl bg-card border border-border/50 shadow-[var(--shadow-soft)] border-l-4 ${service.accent} hover:shadow-[var(--shadow-card)] transition-shadow`}
+              className="group border-t border-foreground/15 pt-6"
             >
-              <service.icon size={28} className="text-foreground mb-4" />
-              <h3 className="font-display text-xl font-semibold text-foreground mb-2">{service.title}</h3>
+              <div className="flex items-start justify-between mb-8">
+                <span className="font-display text-5xl font-bold tracking-tight text-foreground/15 group-hover:text-foreground transition-colors">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <span className={`w-5 h-5 ${service.accent} transition-transform duration-500 group-hover:rotate-90 group-hover:scale-125`} />
+              </div>
+              <h3 className="font-display text-xl font-semibold tracking-tight text-foreground mb-3">
+                {service.title}
+              </h3>
               <p className="text-muted-foreground text-sm leading-relaxed">{service.description}</p>
             </motion.div>
           ))}
