@@ -59,7 +59,7 @@ const BlogPost = () => {
           </div>
 
           <div className="mt-14 rounded-2xl bg-azul-profundo text-background p-8 text-center">
-            <h3 className="font-display text-2xl font-bold mb-2">¿Necesitás sumar talento tech?</h3>
+            <h3 className="font-display text-2xl font-bold mb-2">¿Necesitás sumar talento a tu equipo?</h3>
             <p className="opacity-70 mb-6">Primera terna en 72 hs. Hablemos.</p>
             <Link
               to="/#contacto"

@@ -24,7 +24,7 @@ export const siteConfig = {
   name: "Meiba Talent",
   url: (env.VITE_SITE_URL ?? "https://meibatalent.com.ar").replace(/\/$/, ""),
   description:
-    "Meiba Talent conecta empresas tecnológicas con los mejores profesionales de Argentina. Headhunting ágil, humano y estratégico. Primera terna en 72hs.",
+    "Meiba Talent arma equipos de tecnología, comercial, marketing y logística en Argentina. Headhunting ágil, humano y estratégico. Primera terna en 72hs.",
 
   contactEmail: env.VITE_CONTACT_EMAIL ?? "contacto@meibatalent.com.ar",
   whatsappNumber: env.VITE_WHATSAPP_NUMBER ?? "",

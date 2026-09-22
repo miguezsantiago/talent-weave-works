@@ -135,7 +135,7 @@ const LeadForm = () => {
         <label className="block text-sm font-medium mb-1.5">¿Qué perfil necesitás cubrir?</label>
         <input
           className={fieldClass}
-          placeholder="Ej: Backend Senior, Head of Growth, Data Analyst..."
+          placeholder="Ej: Backend Senior, Key Account, Jefe de Logística..."
           {...register("role_searched")}
         />
       </div>

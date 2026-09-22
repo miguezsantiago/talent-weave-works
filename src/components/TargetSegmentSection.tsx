@@ -4,18 +4,18 @@ import { Rocket, Globe, TrendingUp } from "lucide-react";
 const segments = [
   {
     icon: Rocket,
-    title: "Startups tecnológicas",
+    title: "Startups y scaleups",
     hint: "Equipos fundacionales que necesitan crecer rápido sin perder identidad.",
   },
   {
     icon: Globe,
-    title: "Multinacionales con nearshoring",
-    hint: "Operaciones regionales que buscan talento local con mentalidad global.",
+    title: "Multinacionales con operación regional",
+    hint: "Compañías que buscan talento local con mentalidad global.",
   },
   {
     icon: TrendingUp,
-    title: "PyMEs expandiendo equipos tech",
-    hint: "Empresas en crecimiento que apuestan por la tecnología como motor.",
+    title: "PyMEs armando equipo",
+    hint: "Empresas en crecimiento que suman las primeras estructuras de cada área.",
   },
 ];
 

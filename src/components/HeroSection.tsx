@@ -26,7 +26,8 @@ const HeroSection = () => {
               El talento correcto, en el momento justo.
             </h1>
             <p className="text-lg text-muted-foreground max-w-xl mb-8 leading-relaxed">
-              Sabemos encontrar a las personas que tu negocio necesita. 
+              Armamos equipos de tecnología, comercial, marketing y logística.
+              Sabemos encontrar a las personas que tu negocio necesita.
               Lo demás, lo conversamos.
             </p>
             <div className="flex flex-wrap gap-4">

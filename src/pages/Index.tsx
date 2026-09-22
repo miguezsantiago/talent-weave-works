@@ -13,8 +13,8 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <Seo
-        title="Meiba Talent | Headhunting tecnológico en Argentina"
-        description="Meiba Talent conecta empresas tecnológicas con los mejores profesionales de Argentina. Headhunting ágil, humano y estratégico. Primera terna en 72hs."
+        title="Meiba Talent | Headhunting en Argentina: tech, comercial, marketing y logística"
+        description="Meiba Talent arma equipos de tecnología, comercial, marketing y logística en Argentina. Headhunting ágil, humano y estratégico. Primera terna en 72hs."
         path="/"
       />
       <Navbar />
