@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -8,24 +8,29 @@ import { supabase } from "@/integrations/supabase/client";
 import { trackLead } from "@/lib/analytics";
 import { getUtm } from "@/lib/utm";
 import { siteConfig } from "@/config/site";
+import { useLang } from "@/i18n";
+import type { Translations } from "@/i18n/translations";
 
-const schema = z.object({
-  name: z.string().trim().min(2, "Contanos tu nombre"),
-  email: z.string().trim().email("Email inválido"),
-  company: z.string().trim().max(120).optional().or(z.literal("")),
-  phone: z.string().trim().max(40).optional().or(z.literal("")),
-  role_searched: z.string().trim().max(120).optional().or(z.literal("")),
-  message: z.string().trim().max(2000).optional().or(z.literal("")),
-  // honeypot anti-spam: debe quedar vacío
-  website: z.string().max(0).optional().or(z.literal("")),
-});
+const buildSchema = (t: Translations["form"]) =>
+  z.object({
+    name: z.string().trim().min(2, t.nameError),
+    email: z.string().trim().email(t.emailError),
+    company: z.string().trim().max(120).optional().or(z.literal("")),
+    phone: z.string().trim().max(40).optional().or(z.literal("")),
+    role_searched: z.string().trim().max(120).optional().or(z.literal("")),
+    message: z.string().trim().max(2000).optional().or(z.literal("")),
+    // honeypot anti-spam: debe quedar vacío
+    website: z.string().max(0).optional().or(z.literal("")),
+  });
 
-type FormValues = z.infer<typeof schema>;
+type FormValues = z.infer<ReturnType<typeof buildSchema>>;
 
 const fieldClass =
   "w-full rounded-xl border border-border bg-background px-4 py-3 text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary transition-shadow";
 
 const LeadForm = () => {
+  const { lang, t } = useLang();
+  const schema = useMemo(() => buildSchema(t.form), [t]);
   const [sent, setSent] = useState(false);
   const {
     register,
@@ -56,7 +61,7 @@ const LeadForm = () => {
     });
 
     if (!siteConfig.web3formsAccessKey) {
-      toast.error("El formulario no está configurado para enviar mails todavía.");
+      toast.error(t.form.notConfigured);
       return;
     }
 
@@ -78,27 +83,28 @@ const LeadForm = () => {
           utm_medium: utm.utm_medium ?? undefined,
           utm_campaign: utm.utm_campaign ?? undefined,
           page_path: pagePath,
+          language: lang,
         }),
       });
       const data = await res.json();
       if (!res.ok || !data.success) throw new Error(data.message || "web3forms error");
     } catch {
-      toast.error("No pudimos enviar el mensaje. Probá de nuevo o escribinos por mail.");
+      toast.error(t.form.sendError);
       return;
     }
 
     trackLead({ method: "form" });
     setSent(true);
-    toast.success("¡Recibido! Te respondemos en menos de 24 hs.");
+    toast.success(t.form.successToast);
   };
 
   if (sent) {
     return (
       <div className="rounded-2xl bg-background text-foreground p-8 text-center shadow-card">
         <CheckCircle2 className="mx-auto mb-4 text-primary" size={48} />
-        <h3 className="font-display text-2xl font-bold mb-2">¡Gracias por escribirnos!</h3>
+        <h3 className="font-display text-2xl font-bold mb-2">{t.form.successTitle}</h3>
         <p className="text-muted-foreground">
-          Recibimos tu mensaje. Un especialista de Meiba te contacta en menos de 24 horas hábiles.
+          {t.form.successBody}
         </p>
       </div>
     );
@@ -112,39 +118,39 @@ const LeadForm = () => {
     >
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label className="block text-sm font-medium mb-1.5">Nombre *</label>
-          <input className={fieldClass} placeholder="Tu nombre" {...register("name")} />
+          <label className="block text-sm font-medium mb-1.5">{t.form.name}</label>
+          <input className={fieldClass} placeholder={t.form.namePlaceholder} {...register("name")} />
           {errors.name && <p className="text-destructive text-xs mt-1">{errors.name.message}</p>}
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1.5">Email *</label>
-          <input className={fieldClass} type="email" placeholder="tu@empresa.com" {...register("email")} />
+          <label className="block text-sm font-medium mb-1.5">{t.form.email}</label>
+          <input className={fieldClass} type="email" placeholder={t.form.emailPlaceholder} {...register("email")} />
           {errors.email && <p className="text-destructive text-xs mt-1">{errors.email.message}</p>}
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1.5">Empresa</label>
-          <input className={fieldClass} placeholder="Nombre de tu empresa" {...register("company")} />
+          <label className="block text-sm font-medium mb-1.5">{t.form.company}</label>
+          <input className={fieldClass} placeholder={t.form.companyPlaceholder} {...register("company")} />
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1.5">Teléfono / WhatsApp</label>
+          <label className="block text-sm font-medium mb-1.5">{t.form.phone}</label>
           <input className={fieldClass} placeholder="+54 9 11 ..." {...register("phone")} />
         </div>
       </div>
 
       <div className="mt-4">
-        <label className="block text-sm font-medium mb-1.5">¿Qué perfil necesitás cubrir?</label>
+        <label className="block text-sm font-medium mb-1.5">{t.form.role}</label>
         <input
           className={fieldClass}
-          placeholder="Ej: Backend Senior, Key Account, Jefe de Logística..."
+          placeholder={t.form.rolePlaceholder}
           {...register("role_searched")}
         />
       </div>
 
       <div className="mt-4">
-        <label className="block text-sm font-medium mb-1.5">Contanos más</label>
+        <label className="block text-sm font-medium mb-1.5">{t.form.message}</label>
         <textarea
           className={fieldClass + " min-h-[110px] resize-y"}
-          placeholder="¿Qué necesita tu equipo hoy?"
+          placeholder={t.form.messagePlaceholder}
           {...register("message")}
         />
       </div>
@@ -165,10 +171,10 @@ const LeadForm = () => {
         className="mt-6 w-full inline-flex items-center justify-center gap-2 rounded-full bg-primary text-primary-foreground font-medium text-sm px-8 py-4 hover:opacity-90 transition-opacity disabled:opacity-60"
       >
         {isSubmitting ? <Loader2 className="animate-spin" size={18} /> : <Send size={18} />}
-        {isSubmitting ? "Enviando..." : "Quiero que me contacten"}
+        {isSubmitting ? t.form.submitting : t.form.submit}
       </button>
       <p className="text-muted-foreground text-xs mt-3 text-center">
-        Te respondemos en menos de 24 hs hábiles. Sin spam.
+        {t.form.footnote}
       </p>
     </form>
   );

@@ -1,26 +1,10 @@
 import { motion } from "framer-motion";
-
-// Áreas de práctica. Cada una agrupa los perfiles que buscamos dentro de ella.
-const areas = [
-  {
-    area: "Tecnología",
-    roles: ["Desarrollo", "Data", "Inteligencia Artificial", "Cloud", "DevOps", "Product", "UX/UI", "Cybersecurity"],
-  },
-  {
-    area: "Comercial y ventas",
-    roles: ["Ventas B2B", "Key Account", "Inside Sales", "Customer Success", "Jefaturas comerciales"],
-  },
-  {
-    area: "Marketing",
-    roles: ["Performance", "Brand", "Contenidos", "CRM", "Growth"],
-  },
-  {
-    area: "Logística y operaciones",
-    roles: ["Supply Chain", "Planeamiento", "Comercio exterior", "Distribución", "Jefaturas de operaciones"],
-  },
-];
+import { useLang } from "@/i18n";
 
 const SpecializationsSection = () => {
+  const { t } = useLang();
+  const { areas } = t.specializations;
+
   return (
     <section id="especialidades" className="py-24 lg:py-32 bg-brand-gradient">
       <div className="container mx-auto px-6">
@@ -32,10 +16,10 @@ const SpecializationsSection = () => {
           className="text-center mb-14"
         >
           <h2 className="font-display text-4xl md:text-5xl font-bold text-azul-profundo leading-tight mb-4">
-            Hablamos tu idioma.
+            {t.specializations.title}
           </h2>
           <p className="text-azul-profundo/70 max-w-xl mx-auto leading-relaxed">
-            Buscamos perfiles en cuatro áreas, con el mismo método y el mismo nivel de exigencia en cada una.
+            {t.specializations.body}
           </p>
         </motion.div>
 

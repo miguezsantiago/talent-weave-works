@@ -1,25 +1,14 @@
 import { motion } from "framer-motion";
 import { Rocket, Globe, TrendingUp } from "lucide-react";
+import { useLang } from "@/i18n";
 
-const segments = [
-  {
-    icon: Rocket,
-    title: "Startups y scaleups",
-    hint: "Equipos fundacionales que necesitan crecer rápido sin perder identidad.",
-  },
-  {
-    icon: Globe,
-    title: "Multinacionales con operación regional",
-    hint: "Compañías que buscan talento local con mentalidad global.",
-  },
-  {
-    icon: TrendingUp,
-    title: "PyMEs armando equipo",
-    hint: "Empresas en crecimiento que suman las primeras estructuras de cada área.",
-  },
-];
+// Mismo orden que `segments.items` en src/i18n/translations.ts.
+const icons = [Rocket, Globe, TrendingUp];
 
 const TargetSegmentSection = () => {
+  const { t } = useLang();
+  const segments = t.segments.items.map((item, i) => ({ ...item, icon: icons[i] }));
+
   return (
     <section id="segmento" className="py-24 lg:py-32">
       <div className="container mx-auto px-6">
@@ -31,10 +20,10 @@ const TargetSegmentSection = () => {
           className="text-center mb-16"
         >
           <p className="text-sm font-medium text-primary tracking-widest uppercase mb-3">
-            ¿Con quién trabajamos?
+            {t.segments.eyebrow}
           </p>
           <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground leading-tight">
-            Entendemos tu momento.
+            {t.segments.title}
           </h2>
         </motion.div>
 
@@ -68,9 +57,9 @@ const TargetSegmentSection = () => {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="text-center mt-14 text-muted-foreground text-sm"
         >
-          ¿No te ves reflejado?{" "}
+          {t.segments.notYou}{" "}
           <a href="#contacto" className="text-primary underline underline-offset-4 hover:opacity-80 transition-opacity">
-            Hablemos igual.
+            {t.segments.notYouCta}
           </a>
         </motion.p>
       </div>

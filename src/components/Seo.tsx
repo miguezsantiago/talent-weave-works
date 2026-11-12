@@ -1,10 +1,14 @@
 import { useEffect } from "react";
 import { siteConfig, isPreviewHost } from "@/config/site";
+import { LANGS, localePath, useLang } from "@/i18n";
 
 interface SeoProps {
   title: string;
   description?: string;
-  /** Path relativo, ej "/blog/mi-post". Se usa para canonical y og:url. */
+  /**
+   * Path relativo sin prefijo de idioma, ej "/blog/mi-post". Se usa para
+   * canonical, og:url y los links hreflang entre versiones.
+   */
   path?: string;
   image?: string;
   type?: "website" | "article";
@@ -15,6 +19,8 @@ interface SeoProps {
     tags?: string[];
   };
   noindex?: boolean;
+  /** true si la página no existe en el otro idioma: no se emiten hreflang. */
+  noAlternates?: boolean;
 }
 
 /** Crea o actualiza un <meta> identificado por name o property. */
@@ -39,6 +45,18 @@ function upsertCanonical(href: string) {
   el.setAttribute("href", href);
 }
 
+/** Reemplaza los <link rel="alternate" hreflang> que apuntan a cada versión de idioma. */
+function setAlternates(alternates: { hreflang: string; href: string }[]) {
+  document.head.querySelectorAll('link[rel="alternate"][hreflang]').forEach((el) => el.remove());
+  alternates.forEach(({ hreflang, href }) => {
+    const el = document.createElement("link");
+    el.setAttribute("rel", "alternate");
+    el.setAttribute("hreflang", hreflang);
+    el.setAttribute("href", href);
+    document.head.appendChild(el);
+  });
+}
+
 /** Maneja el bloque JSON-LD de artículo (id propio para no tocar el de Organization). */
 function upsertJsonLd(id: string, data: object | null) {
   const existing = document.getElementById(id);
@@ -57,23 +75,42 @@ function upsertJsonLd(id: string, data: object | null) {
 }
 
 /**
- * SEO por página: title, description, canonical, Open Graph/Twitter y, para el
- * blog, JSON-LD de tipo Article. Maneja el <head> de forma imperativa (sin
+ * SEO por página: title, description, canonical, hreflang, Open Graph/Twitter y,
+ * para el blog, JSON-LD de tipo Article. Maneja el <head> de forma imperativa (sin
  * dependencias externas), actualizándose en cada cambio de ruta.
  */
-const Seo = ({ title, description, path = "/", image, type = "website", article, noindex }: SeoProps) => {
-  const url = `${siteConfig.url}${path}`;
-  const desc = description ?? siteConfig.description;
+const Seo = ({
+  title,
+  description,
+  path = "/",
+  image,
+  type = "website",
+  article,
+  noindex,
+  noAlternates,
+}: SeoProps) => {
+  const { lang, t } = useLang();
+  const url = `${siteConfig.url}${localePath(lang, path)}`;
+  const desc = description ?? t.seo.description;
   const img = image ?? `${siteConfig.url}/og-image.jpg`;
   const fullTitle = title.includes("Meiba") ? title : `${title} | Meiba Talent`;
 
   useEffect(() => {
     document.title = fullTitle;
+    document.documentElement.lang = lang;
     upsertMeta("name", "description", desc);
     // En previews (revisión) forzamos noindex para que Google no indexe borradores.
     const shouldNoindex = noindex || isPreviewHost();
     upsertMeta("name", "robots", shouldNoindex ? "noindex, nofollow" : "index, follow");
     upsertCanonical(url);
+    setAlternates(
+      noindex || noAlternates
+        ? []
+        : [
+            ...LANGS.map((l) => ({ hreflang: l, href: `${siteConfig.url}${localePath(l, path)}` })),
+            { hreflang: "x-default", href: `${siteConfig.url}${path}` },
+          ],
+    );
 
     upsertMeta("property", "og:type", type);
     upsertMeta("property", "og:url", url);
@@ -82,6 +119,7 @@ const Seo = ({ title, description, path = "/", image, type = "website", article,
     upsertMeta("property", "og:image", img);
     upsertMeta("property", "og:image:width", "1200");
     upsertMeta("property", "og:image:height", "630");
+    upsertMeta("property", "og:locale", t.ogLocale);
 
     upsertMeta("name", "twitter:title", fullTitle);
     upsertMeta("name", "twitter:description", desc);
@@ -117,14 +155,14 @@ const Seo = ({ title, description, path = "/", image, type = "website", article,
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             itemListElement: [
-              { "@type": "ListItem", position: 1, name: "Inicio", item: siteConfig.url },
-              { "@type": "ListItem", position: 2, name: "Blog", item: `${siteConfig.url}/blog` },
+              { "@type": "ListItem", position: 1, name: t.seo.breadcrumbHome, item: `${siteConfig.url}${localePath(lang, "/")}` },
+              { "@type": "ListItem", position: 2, name: "Blog", item: `${siteConfig.url}${localePath(lang, "/blog")}` },
               { "@type": "ListItem", position: 3, name: title, item: url },
             ],
           }
         : null,
     );
-  }, [fullTitle, desc, url, img, type, noindex, title, article, path]);
+  }, [fullTitle, desc, url, img, type, noindex, noAlternates, title, article, path, lang, t]);
 
   return null;
 };

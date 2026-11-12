@@ -3,8 +3,12 @@ import { Mail, Calendar, MessageCircle } from "lucide-react";
 import LeadForm from "@/components/LeadForm";
 import { siteConfig, whatsappHref } from "@/config/site";
 import { trackLead } from "@/lib/analytics";
+import { useLang } from "@/i18n";
 
 const ContactSection = () => {
+  const { t } = useLang();
+  const whatsapp = whatsappHref(t.contact.whatsappMessage);
+
   return (
     <section id="contacto" className="py-24 lg:py-32 bg-azul-profundo text-background">
       <div className="container mx-auto px-6">
@@ -16,10 +20,10 @@ const ContactSection = () => {
           className="text-center max-w-2xl mx-auto mb-12"
         >
           <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-            La mejor contratación empieza con una conversación.
+            {t.contact.title}
           </h2>
           <p className="text-lg opacity-70">
-            Dejanos tus datos y un especialista te contacta. O escribinos directo por el canal que prefieras.
+            {t.contact.body}
           </p>
         </motion.div>
 
@@ -28,9 +32,9 @@ const ContactSection = () => {
 
           {/* Canales directos */}
           <div className="flex flex-col sm:flex-row gap-3 justify-center mt-8">
-            {whatsappHref && (
+            {whatsapp && (
               <a
-                href={whatsappHref}
+                href={whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackLead({ method: "whatsapp" })}
@@ -57,7 +61,7 @@ const ContactSection = () => {
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-background/30 text-background font-medium text-sm hover:bg-background/10 transition-colors"
               >
                 <Calendar size={18} />
-                Agendar una charla
+                {t.contact.calendar}
               </a>
             )}
           </div>

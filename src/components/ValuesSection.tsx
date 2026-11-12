@@ -1,30 +1,19 @@
 import { motion } from "framer-motion";
 import { Users, Heart, Sparkles, Shield } from "lucide-react";
+import { useLang } from "@/i18n";
 
-const values = [
-  {
-    title: "Equipo.",
-    icon: Users,
-    color: "bg-primary/10 text-primary",
-  },
-  {
-    title: "Conexión genuina.",
-    icon: Heart,
-    color: "bg-rosado/30 text-foreground",
-  },
-  {
-    title: "Innovación constante.",
-    icon: Sparkles,
-    color: "bg-amarillo/40 text-foreground",
-  },
-  {
-    title: "Ética con impacto.",
-    icon: Shield,
-    color: "bg-celeste/10 text-primary",
-  },
+// Mismo orden que `values.items` en src/i18n/translations.ts.
+const valueStyles = [
+  { icon: Users, color: "bg-primary/10 text-primary" },
+  { icon: Heart, color: "bg-rosado/30 text-foreground" },
+  { icon: Sparkles, color: "bg-amarillo/40 text-foreground" },
+  { icon: Shield, color: "bg-celeste/10 text-primary" },
 ];
 
 const ValuesSection = () => {
+  const { t } = useLang();
+  const values = valueStyles.map((style, i) => ({ ...style, title: t.values.items[i] }));
+
   return (
     <section id="valores" className="py-24 lg:py-32 bg-secondary/50">
       <div className="container mx-auto px-6">
@@ -36,10 +25,10 @@ const ValuesSection = () => {
             transition={{ duration: 0.6 }}
           >
             <p className="text-sm font-medium text-primary tracking-widest uppercase mb-3">
-              Lo que nos mueve
+              {t.values.eyebrow}
             </p>
             <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground leading-tight mb-12">
-              Creemos en otra forma de hacer las cosas.
+              {t.values.title}
             </h2>
           </motion.div>
 

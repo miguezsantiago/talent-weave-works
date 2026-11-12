@@ -8,13 +8,16 @@ import TargetSegmentSection from "@/components/TargetSegmentSection";
 import SpecializationsSection from "@/components/SpecializationsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import { useLang } from "@/i18n";
 
 const Index = () => {
+  const { t } = useLang();
+
   return (
     <div className="min-h-screen">
       <Seo
-        title="Meiba Talent | Headhunting en Argentina: tech, comercial, marketing y logística"
-        description="Meiba Talent arma equipos de tecnología, comercial, marketing y logística en Argentina. Headhunting ágil, humano y estratégico. Primera terna en 72hs."
+        title={t.seo.homeTitle}
+        description={t.seo.description}
         path="/"
       />
       <Navbar />
