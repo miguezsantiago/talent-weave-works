@@ -1,30 +1,14 @@
 import { motion } from "framer-motion";
+import { useLang } from "@/i18n";
 
-// `accent` es el color del cuadrado de marca de cada servicio.
-const services = [
-  {
-    title: "Trabajamos a riesgo",
-    description: "Sin costos iniciales ni retainers: solo cobramos si contratás a un candidato que te presentamos. Honorarios altamente competitivos que se adaptan a tus necesidades.",
-    accent: "bg-brand-gradient",
-  },
-  {
-    title: "Garantía y seguimiento",
-    description: "Acompañamiento posterior a la contratación y reposición sin costo si no se cumplen las expectativas dentro del plazo acordado.",
-    accent: "bg-celeste",
-  },
-  {
-    title: "Expertise en reclutamiento",
-    description: "Más de 10 años de experiencia encontrando a los profesionales que empujarán tu proyecto hacia el éxito.",
-    accent: "bg-rosado",
-  },
-  {
-    title: "Proceso ágil y transparente",
-    description: "Status en tiempo real, informes de disponibilidad, benchmarks salariales y herramientas de selección potenciadas con IA.",
-    accent: "bg-amarillo",
-  },
-];
+// Color del cuadrado de marca de cada servicio, en el mismo orden que
+// `services.items` en src/i18n/translations.ts.
+const accents = ["bg-brand-gradient", "bg-celeste", "bg-rosado", "bg-amarillo"];
 
 const ServicesSection = () => {
+  const { t } = useLang();
+  const services = t.services.items.map((item, i) => ({ ...item, accent: accents[i] }));
+
   return (
     <section id="servicios" className="py-24 lg:py-32">
       <div className="container mx-auto px-6">
@@ -36,10 +20,10 @@ const ServicesSection = () => {
           className="text-center mb-16"
         >
           <p className="text-sm font-medium text-primary tracking-widest uppercase mb-3">
-            ¿Por qué elegirnos?
+            {t.services.eyebrow}
           </p>
           <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground leading-tight">
-            Tu partner estratégico.
+            {t.services.title}
           </h2>
         </motion.div>
 

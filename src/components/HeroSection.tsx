@@ -1,12 +1,15 @@
 import { motion } from "framer-motion";
 import heroImage from "@/assets/hero-team.jpg";
+import { useLang } from "@/i18n";
 
 const HeroSection = () => {
+  const { t } = useLang();
+
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Gradient background */}
       <div className="absolute inset-0 bg-hero-gradient" />
-      
+
       {/* Decorative squares */}
       <div className="absolute top-20 right-10 w-20 h-20 border-2 border-primary/20 hidden lg:block" />
       <div className="absolute top-28 right-4 w-16 h-16 bg-foreground hidden lg:block" />
@@ -20,22 +23,20 @@ const HeroSection = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <p className="text-sm font-medium text-primary tracking-widest uppercase mb-4">
-              Tu partner estratégico
+              {t.hero.eyebrow}
             </p>
             <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] text-foreground mb-6">
-              El talento correcto, en el momento justo.
+              {t.hero.title}
             </h1>
             <p className="text-lg text-muted-foreground max-w-xl mb-8 leading-relaxed">
-              Armamos equipos de tecnología, comercial, marketing y logística.
-              Sabemos encontrar a las personas que tu negocio necesita.
-              Lo demás, lo conversamos.
+              {t.hero.body}
             </p>
             <div className="flex flex-wrap gap-4">
               <a
                 href="#contacto"
                 className="inline-flex items-center px-8 py-3.5 rounded-full bg-foreground text-background font-medium text-sm hover:opacity-90 transition-opacity"
               >
-                Conversemos
+                {t.hero.cta}
               </a>
             </div>
           </motion.div>
@@ -50,7 +51,7 @@ const HeroSection = () => {
             <div className="relative rounded-2xl overflow-hidden shadow-[var(--shadow-elevated)]">
               <img
                 src={heroImage}
-                alt="Equipo de profesionales colaborando en una oficina moderna"
+                alt={t.hero.imageAlt}
                 className="w-full h-[400px] lg:h-[500px] object-cover"
               />
               {/* Overlay gradient squares */}

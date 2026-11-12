@@ -3,6 +3,10 @@
  * Cada post tiene un frontmatter (metadatos) entre "---" y el cuerpo en markdown.
  * Vite los carga en build, así que el contenido queda pre-incluido (bueno para SEO).
  *
+ * Los posts en español viven en src/content/blog/ y su traducción al inglés en
+ * src/content/blog/en/, con el MISMO nombre de archivo (así el selector de idioma
+ * lleva de una versión a la otra). Un post sin traducción solo aparece en español.
+ *
  * Para publicar un post nuevo: crear un .md en src/content/blog/ con este formato:
  *
  *   ---
@@ -17,6 +21,8 @@
  *   ---
  *   # Contenido en markdown...
  */
+
+import type { Lang } from "@/i18n";
 
 export interface PostMeta {
   slug: string;
@@ -35,11 +41,18 @@ export interface Post extends PostMeta {
   content: string;
 }
 
-const files = import.meta.glob("/src/content/blog/*.md", {
-  query: "?raw",
-  import: "default",
-  eager: true,
-}) as Record<string, string>;
+const files: Record<Lang, Record<string, string>> = {
+  es: import.meta.glob("/src/content/blog/*.md", {
+    query: "?raw",
+    import: "default",
+    eager: true,
+  }),
+  en: import.meta.glob("/src/content/blog/en/*.md", {
+    query: "?raw",
+    import: "default",
+    eager: true,
+  }),
+};
 
 function parseFrontmatter(raw: string): { data: Record<string, string>; body: string } {
   const match = /^---\s*\n([\s\S]*?)\n---\s*\n?([\s\S]*)$/.exec(raw);
@@ -94,21 +107,27 @@ function buildPost(path: string, raw: string): Post {
   };
 }
 
-const allPosts: Post[] = Object.entries(files)
-  .map(([path, raw]) => buildPost(path, raw))
-  .sort((a, b) => (a.date < b.date ? 1 : -1));
-
-export function getAllPosts(): Post[] {
-  return allPosts;
+function loadPosts(lang: Lang): Post[] {
+  return Object.entries(files[lang])
+    .map(([path, raw]) => buildPost(path, raw))
+    .sort((a, b) => (a.date < b.date ? 1 : -1));
 }
 
-export function getPostBySlug(slug: string): Post | undefined {
-  return allPosts.find((p) => p.slug === slug);
+const allPosts: Record<Lang, Post[]> = { es: loadPosts("es"), en: loadPosts("en") };
+
+export function getAllPosts(lang: Lang = "es"): Post[] {
+  return allPosts[lang];
 }
 
-export function formatDate(date: string): string {
+export function getPostBySlug(slug: string, lang: Lang = "es"): Post | undefined {
+  return allPosts[lang].find((p) => p.slug === slug);
+}
+
+export function formatDate(date: string, locale = "es-AR"): string {
   if (!date) return "";
   const d = new Date(date);
   if (Number.isNaN(d.getTime())) return date;
-  return d.toLocaleDateString("es-AR", { day: "numeric", month: "long", year: "numeric" });
+  // timeZone UTC: la fecha del frontmatter no tiene hora, y sin esto en Argentina
+  // (UTC-3) se mostraba el día anterior.
+  return d.toLocaleDateString(locale, { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
 }

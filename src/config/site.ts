@@ -23,8 +23,6 @@ const env = import.meta.env;
 export const siteConfig = {
   name: "Meiba Talent",
   url: (env.VITE_SITE_URL ?? "https://meibatalent.com.ar").replace(/\/$/, ""),
-  description:
-    "Meiba Talent arma equipos de tecnología, comercial, marketing y logística en Argentina. Headhunting ágil, humano y estratégico. Primera terna en 72hs.",
 
   contactEmail: env.VITE_CONTACT_EMAIL ?? "contacto@meibatalent.com.ar",
   whatsappNumber: env.VITE_WHATSAPP_NUMBER ?? "",
@@ -61,11 +59,12 @@ export function isPreviewHost(): boolean {
   return !productionHosts.includes(window.location.hostname);
 }
 
-/** Mensaje pre-armado para el botón de WhatsApp. */
-export const whatsappMessage =
-  "Hola Meiba 👋 Quiero contar qué necesita mi equipo y conocer cómo trabajan.";
-
-/** Link de WhatsApp listo para usar (o null si no hay número configurado). */
-export const whatsappHref = siteConfig.whatsappNumber
-  ? `https://wa.me/${siteConfig.whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`
-  : null;
+/**
+ * Link de WhatsApp listo para usar, con el mensaje pre-armado en el idioma del
+ * visitante (o null si no hay número configurado).
+ */
+export function whatsappHref(message: string): string | null {
+  return siteConfig.whatsappNumber
+    ? `https://wa.me/${siteConfig.whatsappNumber}?text=${encodeURIComponent(message)}`
+    : null;
+}

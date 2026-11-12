@@ -2,15 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://meibatalent.com.ar/</loc>
-    <lastmod>2026-08-21</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://meibatalent.com.ar/blog</loc>
-    <lastmod>2026-07-22</lastmod>
+    <lastmod>2026-09-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://meibatalent.com.ar/blog/roi-contratacion-costo-vacante-abierta</loc>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://meibatalent.com.ar/blog/que-es-headhunter-cuando-tercerizar-busqueda-tech</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://meibatalent.com.ar/blog/partnership-deel-contratacion-global</loc>
@@ -38,6 +50,60 @@
   </url>
   <url>
     <loc>https://meibatalent.com.ar/blog/cuanto-tarda-cubrir-vacante-tech</loc>
+    <lastmod>2026-05-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://meibatalent.com.ar/en</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://meibatalent.com.ar/en/blog</loc>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://meibatalent.com.ar/en/blog/roi-contratacion-costo-vacante-abierta</loc>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://meibatalent.com.ar/en/blog/que-es-headhunter-cuando-tercerizar-busqueda-tech</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://meibatalent.com.ar/en/blog/partnership-deel-contratacion-global</loc>
+    <lastmod>2026-07-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://meibatalent.com.ar/en/blog/retener-talento-tech-competencia-exterior</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://meibatalent.com.ar/en/blog/sueldos-tech-argentina-2026-banda-salarial</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://meibatalent.com.ar/en/blog/como-contratar-talento-tech-argentina-2026</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://meibatalent.com.ar/en/blog/cuanto-tarda-cubrir-vacante-tech</loc>
     <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

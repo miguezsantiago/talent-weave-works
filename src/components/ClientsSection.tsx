@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useLang } from "@/i18n";
 
 // Logos en public/logos/. `size` ajusta la altura para que todos pesen parecido
 // (los logos cuadrados necesitan más alto que los horizontales).
@@ -32,6 +33,8 @@ const ClientLogo = ({ name, logo, size = "h-10" }: { name: string; logo?: string
 );
 
 const ClientsSection = () => {
+  const { t } = useLang();
+
   return (
     <section id="clientes" className="py-16 lg:py-20 bg-background">
       <div className="container mx-auto px-6">
@@ -42,7 +45,7 @@ const ClientsSection = () => {
           transition={{ duration: 0.6 }}
           className="text-sm font-medium text-primary tracking-widest uppercase text-center mb-10"
         >
-          Marcas que confían en nosotros
+          {t.clients.eyebrow}
         </motion.p>
       </div>
 
