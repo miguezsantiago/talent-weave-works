@@ -32,9 +32,10 @@ const es = {
   },
 
   hero: {
-    eyebrow: "Tu partner estratégico",
-    title: "El talento correcto, en el momento justo.",
-    body: "Armamos equipos de tecnología, comercial, marketing y logística. Sabemos encontrar a las personas que tu negocio necesita. Lo demás, lo conversamos.",
+    eyebrow: "Headhunting a riesgo en Argentina",
+    title: "El talento que tu negocio necesita, sin costo adelantado.",
+    body: "Armamos equipos de tecnología, comercial, marketing y logística. Trabajamos a riesgo: no hay retainer ni pago inicial, y solo cobramos si contratás a un candidato que te presentamos. Primera terna en 72 horas. Garantía de reemplazo a 90 días.",
+    highlights: ["A riesgo, sin retainer", "Primera terna en 72 hs", "Garantía de 90 días"],
     cta: "Conversemos",
     imageAlt: "Equipo de profesionales colaborando en una oficina moderna",
   },
@@ -215,9 +216,10 @@ const en: Translations = {
   },
 
   hero: {
-    eyebrow: "Your strategic partner",
-    title: "The right talent, right on time.",
-    body: "We build technology, sales, marketing and logistics teams. We know how to find the people your business needs. The rest, we'll talk through together.",
+    eyebrow: "Contingency headhunting in Argentina",
+    title: "The talent your business needs, with no upfront cost.",
+    body: "We build technology, sales, marketing and logistics teams. We work on contingency: no retainer and no upfront fee, and we only charge if you hire a candidate we introduced. First shortlist in 72 hours. 90-day replacement guarantee.",
+    highlights: ["Contingency, no retainer", "First shortlist in 72 hours", "90-day replacement guarantee"],
     cta: "Let's talk",
     imageAlt: "Team of professionals collaborating in a modern office",
   },

@@ -28,9 +28,17 @@ const HeroSection = () => {
             <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] text-foreground mb-6">
               {t.hero.title}
             </h1>
-            <p className="text-lg text-muted-foreground max-w-xl mb-8 leading-relaxed">
+            <p className="text-lg text-muted-foreground max-w-xl mb-6 leading-relaxed">
               {t.hero.body}
             </p>
+            <ul className="flex flex-wrap gap-x-6 gap-y-2 mb-8">
+              {t.hero.highlights.map((item) => (
+                <li key={item} className="flex items-center gap-2 text-sm font-medium text-foreground">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" aria-hidden="true" />
+                  {item}
+                </li>
+              ))}
+            </ul>
             <div className="flex flex-wrap gap-4">
               <a
                 href="#contacto"
