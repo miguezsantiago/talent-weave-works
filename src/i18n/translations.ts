@@ -182,6 +182,11 @@ const es = {
     home: "Volver al inicio",
   },
 
+  social: {
+    linkedin: "Meiba Talent en LinkedIn",
+    instagram: "Meiba Talent en Instagram",
+  },
+
   footer: {
     location: "Buenos Aires, Argentina.",
   },
@@ -364,6 +369,11 @@ const en: Translations = {
   notFound: {
     message: "We couldn't find this page.",
     home: "Back to home",
+  },
+
+  social: {
+    linkedin: "Meiba Talent on LinkedIn",
+    instagram: "Meiba Talent on Instagram",
   },
 
   footer: {

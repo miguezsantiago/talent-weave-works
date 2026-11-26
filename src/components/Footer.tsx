@@ -1,3 +1,4 @@
+import SocialLinks from "@/components/SocialLinks";
 import { useLang } from "@/i18n";
 
 const Footer = () => {
@@ -10,6 +11,7 @@ const Footer = () => {
           meiba<span className="text-xs align-super">®</span>{" "}
           <span className="font-body font-normal text-sm">Talent</span>
         </div>
+        <SocialLinks variant="dark" />
         <p className="text-sm text-background/40">
           © {new Date().getFullYear()} Meiba Talent. {t.footer.location}
         </p>

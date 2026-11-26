@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, Calendar, MessageCircle } from "lucide-react";
+import { Mail, Calendar, MessageCircle, Linkedin, Instagram } from "lucide-react";
 import LeadForm from "@/components/LeadForm";
 import { siteConfig, whatsappHref } from "@/config/site";
 import { trackLead } from "@/lib/analytics";
@@ -42,6 +42,28 @@ const ContactSection = () => {
               >
                 <MessageCircle size={18} />
                 WhatsApp
+              </a>
+            )}
+            {siteConfig.social.linkedin && (
+              <a
+                href={siteConfig.social.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-background/30 text-background font-medium text-sm hover:bg-background/10 transition-colors"
+              >
+                <Linkedin size={18} />
+                LinkedIn
+              </a>
+            )}
+            {siteConfig.social.instagram && (
+              <a
+                href={siteConfig.social.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-background/30 text-background font-medium text-sm hover:bg-background/10 transition-colors"
+              >
+                <Instagram size={18} />
+                Instagram
               </a>
             )}
             <a
