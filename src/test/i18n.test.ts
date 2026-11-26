@@ -116,5 +116,6 @@ describe("traducciones", () => {
     expect(en.specializations.areas.map((a) => a.roles.length)).toEqual(
       es.specializations.areas.map((a) => a.roles.length),
     );
+    expect(en.industries.items).toHaveLength(es.industries.items.length);
   });
 });

@@ -121,6 +121,38 @@ const es = {
     notYouCta: "Hablemos igual.",
   },
 
+  industries: {
+    eyebrow: "Rubros",
+    title: "El mismo método, en los rubros que tu equipo necesita cubrir.",
+    body: "Además de las áreas de práctica, buscamos talento en construcción, retail, energía, logística y concesionarias, entre otros.",
+    items: [
+      {
+        title: "Construcción e infraestructura",
+        hint: "Perfiles de obra, proyectos y operación para empresas que construyen y mantienen.",
+      },
+      {
+        title: "Consumo masivo y retail",
+        hint: "Comercial, marketing, operaciones y liderazgo para marcas y cadenas.",
+      },
+      {
+        title: "Energía",
+        hint: "Búsquedas para oil & gas, energía y compañías del sector.",
+      },
+      {
+        title: "Tecnología",
+        hint: "Los perfiles IT que ya cubrimos, también al servicio de estos rubros.",
+      },
+      {
+        title: "Transporte y logística",
+        hint: "Supply chain, distribución y operaciones, con la misma exigencia.",
+      },
+      {
+        title: "Concesionarias oficiales",
+        hint: "Comercial y management para redes automotrices.",
+      },
+    ],
+  },
+
   // Áreas de práctica. Cada una agrupa los perfiles que buscamos dentro de ella.
   specializations: {
     title: "Hablamos tu idioma.",
@@ -355,6 +387,38 @@ const en: Translations = {
     ],
     notYou: "Don't see yourself here?",
     notYouCta: "Let's talk anyway.",
+  },
+
+  industries: {
+    eyebrow: "Industries",
+    title: "The same method, in the industries your team needs to hire for.",
+    body: "Beyond our practice areas, we search for talent in construction, retail, energy, logistics and dealerships, among others.",
+    items: [
+      {
+        title: "Construction and infrastructure",
+        hint: "Project, site and operations roles for companies that build and maintain.",
+      },
+      {
+        title: "Consumer goods and retail",
+        hint: "Sales, marketing, operations and leadership for brands and retail chains.",
+      },
+      {
+        title: "Energy",
+        hint: "Searches for oil & gas, energy and companies in the sector.",
+      },
+      {
+        title: "Technology",
+        hint: "The IT roles we already cover, also in service of these industries.",
+      },
+      {
+        title: "Transportation and logistics",
+        hint: "Supply chain, distribution and operations, with the same high bar.",
+      },
+      {
+        title: "Official dealerships",
+        hint: "Sales and management roles for automotive networks.",
+      },
+    ],
   },
 
   specializations: {

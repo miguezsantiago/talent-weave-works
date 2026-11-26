@@ -7,6 +7,7 @@ import MethodologySection from "@/components/MethodologySection";
 import ServicesSection from "@/components/ServicesSection";
 import TargetSegmentSection from "@/components/TargetSegmentSection";
 import SpecializationsSection from "@/components/SpecializationsSection";
+import IndustriesSection from "@/components/IndustriesSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import { useLang } from "@/i18n";
@@ -29,6 +30,7 @@ const Index = () => {
       <ServicesSection />
       <TargetSegmentSection />
       <SpecializationsSection />
+      <IndustriesSection />
       <ContactSection />
       <Footer />
     </div>
