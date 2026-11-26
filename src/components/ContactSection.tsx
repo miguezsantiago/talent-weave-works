@@ -30,9 +30,10 @@ const ContactSection = () => {
         <div className="max-w-2xl mx-auto">
           <LeadForm />
 
-          {/* Canales directos */}
-          <div className="flex flex-col sm:flex-row gap-3 justify-center mt-8">
-            {whatsapp && (
+          {/* Canales directos. WhatsApp y agenda solo se activan con valores reales
+              en el .env; si están vacíos se muestra un placeholder visible, nunca un dato inventado. */}
+          <div className="flex flex-col sm:flex-row flex-wrap gap-3 justify-center mt-8">
+            {whatsapp ? (
               <a
                 href={whatsapp}
                 target="_blank"
@@ -43,6 +44,16 @@ const ContactSection = () => {
                 <MessageCircle size={18} />
                 WhatsApp
               </a>
+            ) : (
+              // TODO(Santi): completar VITE_WHATSAPP_NUMBER en el .env (formato internacional, solo dígitos).
+              <span
+                aria-disabled="true"
+                title={t.contact.channelsPending}
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-dashed border-background/40 text-background/60 font-medium text-sm cursor-not-allowed"
+              >
+                <MessageCircle size={18} />
+                {t.contact.whatsappPlaceholder}
+              </span>
             )}
             {siteConfig.social.linkedin && (
               <a
@@ -74,7 +85,7 @@ const ContactSection = () => {
               <Mail size={18} />
               {siteConfig.contactEmail}
             </a>
-            {siteConfig.calendarUrl && (
+            {siteConfig.calendarUrl ? (
               <a
                 href={siteConfig.calendarUrl}
                 target="_blank"
@@ -85,8 +96,23 @@ const ContactSection = () => {
                 <Calendar size={18} />
                 {t.contact.calendar}
               </a>
+            ) : (
+              // TODO(Santi): completar VITE_CALENDAR_URL en el .env (Calendly, Cal.com o Google Calendar).
+              <span
+                aria-disabled="true"
+                title={t.contact.channelsPending}
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-dashed border-background/40 text-background/60 font-medium text-sm cursor-not-allowed"
+              >
+                <Calendar size={18} />
+                {t.contact.calendarPlaceholder}
+              </span>
             )}
           </div>
+          {(!whatsapp || !siteConfig.calendarUrl) && (
+            <p className="mt-4 text-center text-xs text-background/45 max-w-lg mx-auto">
+              {t.contact.channelsPending}
+            </p>
+          )}
         </div>
       </div>
     </section>

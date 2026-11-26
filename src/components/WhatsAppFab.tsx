@@ -5,7 +5,11 @@ import { useLang } from "@/i18n";
 
 /**
  * Botón flotante de WhatsApp (esquina inferior derecha).
- * Solo se renderiza si hay un número configurado en el .env.
+ * Solo se renderiza si hay un número real en VITE_WHATSAPP_NUMBER.
+ * No se inventa un número ni se muestra un FAB vacío: el placeholder
+ * visible vive en ContactSection hasta que el .env esté completo.
+ *
+ * TODO(Santi): completar VITE_WHATSAPP_NUMBER para activar este botón.
  */
 const WhatsAppFab = () => {
   const { t } = useLang();

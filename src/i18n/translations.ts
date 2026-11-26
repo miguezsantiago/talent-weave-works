@@ -137,6 +137,11 @@ const es = {
     calendar: "Agendar una charla",
     whatsappAria: "Escribinos por WhatsApp",
     whatsappMessage: "Hola Meiba 👋 Quiero contar qué necesita mi equipo y conocer cómo trabajan.",
+    // Visible solo si falta VITE_WHATSAPP_NUMBER / VITE_CALENDAR_URL. No inventar el dato.
+    whatsappPlaceholder: "WhatsApp (completar número)",
+    calendarPlaceholder: "Agenda (completar link)",
+    channelsPending:
+      "Para prender WhatsApp y la agenda, completá VITE_WHATSAPP_NUMBER y VITE_CALENDAR_URL en el .env. Hasta entonces estos botones son un placeholder.",
   },
 
   form: {
@@ -326,6 +331,10 @@ const en: Translations = {
     calendar: "Book a call",
     whatsappAria: "Message us on WhatsApp",
     whatsappMessage: "Hi Meiba 👋 I'd like to tell you what my team needs and learn how you work.",
+    whatsappPlaceholder: "WhatsApp (number needed)",
+    calendarPlaceholder: "Calendar (link needed)",
+    channelsPending:
+      "To enable WhatsApp and booking, set VITE_WHATSAPP_NUMBER and VITE_CALENDAR_URL in the .env file. Until then these buttons are placeholders.",
   },
 
   form: {
