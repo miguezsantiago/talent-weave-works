@@ -39,12 +39,18 @@ const HeroSection = () => {
                 </li>
               ))}
             </ul>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap items-center gap-4">
               <a
                 href="#contacto"
                 className="inline-flex items-center px-8 py-3.5 rounded-full bg-foreground text-background font-medium text-sm hover:opacity-90 transition-opacity"
               >
                 {t.hero.cta}
+              </a>
+              <a
+                href="#contacto"
+                className="inline-flex items-center px-8 py-3.5 rounded-full border border-foreground text-foreground font-medium text-sm hover:bg-foreground hover:text-background transition-all"
+              >
+                {t.hero.ctaSecondary}
               </a>
             </div>
           </motion.div>
