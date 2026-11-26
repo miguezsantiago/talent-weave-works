@@ -20,6 +20,24 @@
 
 const env = import.meta.env;
 
+/**
+ * Canales y prueba social: apagados hasta que el equipo comercial confirme
+ * el número de WhatsApp, el link de agenda y los logos/testimonios.
+ *
+ * Para prenderlos, después de esa confirmación:
+ *   1. Pasá a true el flag que corresponda.
+ *   2. WhatsApp: completá VITE_WHATSAPP_NUMBER en el .env (solo dígitos).
+ *   3. Agenda: completá VITE_CALENDAR_URL en el .env.
+ *   4. Prueba social: reemplazá los placeholders de SocialProofSection
+ *      por logos y citas autorizados (o activá ClientsSection con permiso)
+ *      ANTES de poner socialProof en true.
+ */
+export const featureFlags = {
+  whatsapp: false,
+  calendar: false,
+  socialProof: false,
+};
+
 export const siteConfig = {
   name: "Meiba Talent",
   url: (env.VITE_SITE_URL ?? "https://meibatalent.com.ar").replace(/\/$/, ""),
@@ -64,7 +82,8 @@ export function isPreviewHost(): boolean {
  * visitante (o null si no hay número configurado).
  */
 export function whatsappHref(message: string): string | null {
-  return siteConfig.whatsappNumber
-    ? `https://wa.me/${siteConfig.whatsappNumber}?text=${encodeURIComponent(message)}`
-    : null;
+  // El flag manda: aunque haya número en el .env, no se muestra hasta
+  // que comercial confirme y featureFlags.whatsapp pase a true.
+  if (!featureFlags.whatsapp || !siteConfig.whatsappNumber) return null;
+  return `https://wa.me/${siteConfig.whatsappNumber}?text=${encodeURIComponent(message)}`;
 }

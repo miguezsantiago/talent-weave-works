@@ -10,6 +10,7 @@ import SpecializationsSection from "@/components/SpecializationsSection";
 import IndustriesSection from "@/components/IndustriesSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import { featureFlags } from "@/config/site";
 import { useLang } from "@/i18n";
 
 const Index = () => {
@@ -24,7 +25,10 @@ const Index = () => {
       />
       <Navbar />
       <HeroSection />
-      <SocialProofSection />
+      {/* Prueba social oculta hasta que comercial autorice logos y testimonios.
+          Para prenderla: reemplazar placeholders en SocialProofSection y pasar
+          featureFlags.socialProof a true en src/config/site.ts. */}
+      {featureFlags.socialProof && <SocialProofSection />}
       <ValuesSection />
       <MethodologySection />
       <ServicesSection />

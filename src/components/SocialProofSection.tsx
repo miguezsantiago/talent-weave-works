@@ -2,10 +2,13 @@ import { motion } from "framer-motion";
 import { useLang } from "@/i18n";
 
 /**
- * Franja de prueba social con PLACEHOLDERS a la vista.
+ * Franja de prueba social. Hoy no se monta: featureFlags.socialProof está
+ * en false hasta que el equipo comercial autorice logos y testimonios.
  *
- * TODO(Santi): reemplazar logos y testimonios solo con autorización explícita
- * de cada cliente. No inventar nombres, citas ni métricas.
+ * Para prenderla:
+ *   1. Reemplazar los placeholders por material autorizado (nunca inventar
+ *      nombres, citas ni métricas).
+ *   2. Pasar featureFlags.socialProof a true en src/config/site.ts.
  *
  * Material ya disponible en el repo, todavía sin usar:
  * - Logos en public/logos/ (Fiat, Marriott, OSDE, Citroën, Omoda & Jaecoo),
