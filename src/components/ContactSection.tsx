@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import { Mail, Calendar, MessageCircle } from "lucide-react";
+import { Mail, Calendar, MessageCircle, Linkedin, Instagram } from "lucide-react";
 import LeadForm from "@/components/LeadForm";
-import { siteConfig, whatsappHref } from "@/config/site";
+import { featureFlags, siteConfig, whatsappHref } from "@/config/site";
 import { trackLead } from "@/lib/analytics";
 import { useLang } from "@/i18n";
 
@@ -30,8 +30,11 @@ const ContactSection = () => {
         <div className="max-w-2xl mx-auto">
           <LeadForm />
 
-          {/* Canales directos */}
-          <div className="flex flex-col sm:flex-row gap-3 justify-center mt-8">
+          {/* Canales directos. WhatsApp y agenda quedan ocultos hasta que
+              comercial confirme y se prenda el flag en src/config/site.ts
+              (featureFlags.whatsapp / featureFlags.calendar), con el dato real
+              en el .env. No se muestran placeholders. */}
+          <div className="flex flex-col sm:flex-row flex-wrap gap-3 justify-center mt-8">
             {whatsapp && (
               <a
                 href={whatsapp}
@@ -44,6 +47,28 @@ const ContactSection = () => {
                 WhatsApp
               </a>
             )}
+            {siteConfig.social.linkedin && (
+              <a
+                href={siteConfig.social.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-background/30 text-background font-medium text-sm hover:bg-background/10 transition-colors"
+              >
+                <Linkedin size={18} />
+                LinkedIn
+              </a>
+            )}
+            {siteConfig.social.instagram && (
+              <a
+                href={siteConfig.social.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-background/30 text-background font-medium text-sm hover:bg-background/10 transition-colors"
+              >
+                <Instagram size={18} />
+                Instagram
+              </a>
+            )}
             <a
               href={`mailto:${siteConfig.contactEmail}`}
               onClick={() => trackLead({ method: "email" })}
@@ -52,7 +77,7 @@ const ContactSection = () => {
               <Mail size={18} />
               {siteConfig.contactEmail}
             </a>
-            {siteConfig.calendarUrl && (
+            {featureFlags.calendar && siteConfig.calendarUrl && (
               <a
                 href={siteConfig.calendarUrl}
                 target="_blank"

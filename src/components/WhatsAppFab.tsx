@@ -5,7 +5,8 @@ import { useLang } from "@/i18n";
 
 /**
  * Botón flotante de WhatsApp (esquina inferior derecha).
- * Solo se renderiza si hay un número configurado en el .env.
+ * whatsappHref ya exige featureFlags.whatsapp (apagado hasta que comercial
+ * confirme) y un VITE_WHATSAPP_NUMBER real. Sin eso no se renderiza nada.
  */
 const WhatsAppFab = () => {
   const { t } = useLang();

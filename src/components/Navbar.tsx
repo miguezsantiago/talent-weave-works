@@ -3,6 +3,7 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import LanguageToggle from "@/components/LanguageToggle";
+import SocialLinks from "@/components/SocialLinks";
 import { useLang } from "@/i18n";
 
 const Navbar = () => {
@@ -47,6 +48,8 @@ const Navbar = () => {
             </a>
           </div>
 
+          <SocialLinks className="hidden md:flex" />
+
           <LanguageToggle />
 
           {/* Mobile toggle */}
@@ -87,6 +90,7 @@ const Navbar = () => {
               >
                 {t.nav.contact}
               </a>
+              <SocialLinks />
             </div>
           </motion.div>
         )}

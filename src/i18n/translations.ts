@@ -32,10 +32,12 @@ const es = {
   },
 
   hero: {
-    eyebrow: "Tu partner estratégico",
-    title: "El talento correcto, en el momento justo.",
-    body: "Armamos equipos de tecnología, comercial, marketing y logística. Sabemos encontrar a las personas que tu negocio necesita. Lo demás, lo conversamos.",
-    cta: "Conversemos",
+    eyebrow: "Headhunting a riesgo en Argentina",
+    title: "El talento que tu negocio necesita, sin costo adelantado.",
+    body: "Armamos equipos de tecnología, comercial, marketing y logística. Trabajamos a riesgo: no hay retainer ni pago inicial, y solo cobramos si contratás a un candidato que te presentamos. Primera terna en 72 horas. Garantía de reemplazo a 90 días.",
+    highlights: ["A riesgo, sin retainer", "Primera terna en 72 hs", "Garantía de 90 días"],
+    cta: "Pedí una terna, sin costo inicial",
+    ctaSecondary: "Conversemos",
     imageAlt: "Equipo de profesionales colaborando en una oficina moderna",
   },
 
@@ -49,8 +51,26 @@ const es = {
     eyebrow: "Cómo trabajamos",
     title: "Rápido. Preciso. Humano.",
     body: "Combinamos headhunting con análisis profundo del mercado. No esperamos que el talento llegue — vamos a buscarlo.",
+    steps: [
+      {
+        title: "Brief",
+        body: "Nos contás el perfil y el contexto de tu equipo. Alineamos expectativas, urgencia y cultura antes de salir a buscar.",
+      },
+      {
+        title: "Mapeo",
+        body: "Mapeamos el mercado y contactamos al talento que no está respondiendo avisos. Vamos a buscarlo.",
+      },
+      {
+        title: "Terna",
+        body: "Te presentamos una primera terna en 72 horas, con criterio y contexto para que puedas decidir.",
+      },
+      {
+        title: "Seguimiento",
+        body: "Acompañamos la contratación y cubrimos la garantía de reemplazo a 90 días si hace falta.",
+      },
+    ],
     stats: ["Primera terna de candidatos", "Garantía de reemplazo", "Años de experiencia"],
-    cta: "Conocé el proceso completo",
+    cta: "Pedí una terna, sin costo inicial",
   },
 
   services: {
@@ -101,6 +121,38 @@ const es = {
     notYouCta: "Hablemos igual.",
   },
 
+  industries: {
+    eyebrow: "Rubros",
+    title: "El mismo método, en los rubros que tu equipo necesita cubrir.",
+    body: "Además de las áreas de práctica, buscamos talento en construcción, retail, energía, logística y concesionarias, entre otros.",
+    items: [
+      {
+        title: "Construcción e infraestructura",
+        hint: "Perfiles de obra, proyectos y operación para empresas que construyen y mantienen.",
+      },
+      {
+        title: "Consumo masivo y retail",
+        hint: "Comercial, marketing, operaciones y liderazgo para marcas y cadenas.",
+      },
+      {
+        title: "Energía",
+        hint: "Búsquedas para oil & gas, energía y compañías del sector.",
+      },
+      {
+        title: "Tecnología",
+        hint: "Los perfiles IT que ya cubrimos, también al servicio de estos rubros.",
+      },
+      {
+        title: "Transporte y logística",
+        hint: "Supply chain, distribución y operaciones, con la misma exigencia.",
+      },
+      {
+        title: "Concesionarias oficiales",
+        hint: "Comercial y management para redes automotrices.",
+      },
+    ],
+  },
+
   // Áreas de práctica. Cada una agrupa los perfiles que buscamos dentro de ella.
   specializations: {
     title: "Hablamos tu idioma.",
@@ -129,12 +181,40 @@ const es = {
     eyebrow: "Marcas que confían en nosotros",
   },
 
+  socialProof: {
+    eyebrow: "Prueba social",
+    title: "Logos y testimonios, pendientes de autorización.",
+    body: "Esta franja está lista para mostrar prueba social. Hasta que confirmes clientes y citas, se ven placeholders. No hay nombres, logos ni métricas inventadas.",
+    placeholderLabel: "Placeholder",
+    logos: [
+      "Logo del cliente 1 — pendiente de autorización",
+      "Logo del cliente 2 — pendiente de autorización",
+      "Logo del cliente 3 — pendiente de autorización",
+    ],
+    testimonials: [
+      {
+        quote: "Acá va una cita corta, solo con autorización explícita del cliente.",
+        attribution: "Nombre, cargo y empresa (pendiente)",
+      },
+      {
+        quote: "Acá va otra cita corta. No publicar hasta tener el OK.",
+        attribution: "Nombre, cargo y empresa (pendiente)",
+      },
+    ],
+    note: "En el repo ya hay logos preparados, todavía sin montar, en public/logos/. La alianza con Deel está comunicada en el blog. Completá esta sección solo con permiso de cada cliente.",
+  },
+
   contact: {
     title: "La mejor contratación empieza con una conversación.",
     body: "Dejanos tus datos y un especialista te contacta. O escribinos directo por el canal que prefieras.",
     calendar: "Agendar una charla",
     whatsappAria: "Escribinos por WhatsApp",
     whatsappMessage: "Hola Meiba 👋 Quiero contar qué necesita mi equipo y conocer cómo trabajan.",
+    // Visible solo si falta VITE_WHATSAPP_NUMBER / VITE_CALENDAR_URL. No inventar el dato.
+    whatsappPlaceholder: "WhatsApp (completar número)",
+    calendarPlaceholder: "Agenda (completar link)",
+    channelsPending:
+      "Para prender WhatsApp y la agenda, completá VITE_WHATSAPP_NUMBER y VITE_CALENDAR_URL en el .env. Hasta entonces estos botones son un placeholder.",
   },
 
   form: {
@@ -180,6 +260,11 @@ const es = {
     home: "Volver al inicio",
   },
 
+  social: {
+    linkedin: "Meiba Talent en LinkedIn",
+    instagram: "Meiba Talent en Instagram",
+  },
+
   footer: {
     location: "Buenos Aires, Argentina.",
   },
@@ -215,10 +300,12 @@ const en: Translations = {
   },
 
   hero: {
-    eyebrow: "Your strategic partner",
-    title: "The right talent, right on time.",
-    body: "We build technology, sales, marketing and logistics teams. We know how to find the people your business needs. The rest, we'll talk through together.",
-    cta: "Let's talk",
+    eyebrow: "Contingency headhunting in Argentina",
+    title: "The talent your business needs, with no upfront cost.",
+    body: "We build technology, sales, marketing and logistics teams. We work on contingency: no retainer and no upfront fee, and we only charge if you hire a candidate we introduced. First shortlist in 72 hours. 90-day replacement guarantee.",
+    highlights: ["Contingency, no retainer", "First shortlist in 72 hours", "90-day replacement guarantee"],
+    cta: "Request a shortlist, no upfront cost",
+    ctaSecondary: "Let's talk",
     imageAlt: "Team of professionals collaborating in a modern office",
   },
 
@@ -232,8 +319,26 @@ const en: Translations = {
     eyebrow: "How we work",
     title: "Fast. Precise. Human.",
     body: "We combine headhunting with deep market analysis. We don't wait for talent to show up — we go out and find it.",
+    steps: [
+      {
+        title: "Brief",
+        body: "You tell us about the role and your team. We align on expectations, urgency and culture before we start the search.",
+      },
+      {
+        title: "Mapping",
+        body: "We map the market and reach out to talent that isn't answering job ads. We go out and find them.",
+      },
+      {
+        title: "Shortlist",
+        body: "We present a first shortlist in 72 hours, with context and criteria so you can decide.",
+      },
+      {
+        title: "Follow-up",
+        body: "We support the hire and cover the 90-day replacement guarantee if needed.",
+      },
+    ],
     stats: ["First candidate shortlist", "Replacement guarantee", "Years of experience"],
-    cta: "See the full process",
+    cta: "Request a shortlist, no upfront cost",
   },
 
   services: {
@@ -284,6 +389,38 @@ const en: Translations = {
     notYouCta: "Let's talk anyway.",
   },
 
+  industries: {
+    eyebrow: "Industries",
+    title: "The same method, in the industries your team needs to hire for.",
+    body: "Beyond our practice areas, we search for talent in construction, retail, energy, logistics and dealerships, among others.",
+    items: [
+      {
+        title: "Construction and infrastructure",
+        hint: "Project, site and operations roles for companies that build and maintain.",
+      },
+      {
+        title: "Consumer goods and retail",
+        hint: "Sales, marketing, operations and leadership for brands and retail chains.",
+      },
+      {
+        title: "Energy",
+        hint: "Searches for oil & gas, energy and companies in the sector.",
+      },
+      {
+        title: "Technology",
+        hint: "The IT roles we already cover, also in service of these industries.",
+      },
+      {
+        title: "Transportation and logistics",
+        hint: "Supply chain, distribution and operations, with the same high bar.",
+      },
+      {
+        title: "Official dealerships",
+        hint: "Sales and management roles for automotive networks.",
+      },
+    ],
+  },
+
   specializations: {
     title: "We speak your language.",
     body: "We search for talent in four areas, with the same method and the same high bar in each one.",
@@ -311,12 +448,39 @@ const en: Translations = {
     eyebrow: "Brands that trust us",
   },
 
+  socialProof: {
+    eyebrow: "Social proof",
+    title: "Logos and testimonials, pending authorization.",
+    body: "This strip is ready for social proof. Until you confirm clients and quotes, these are placeholders. No names, logos or metrics were invented.",
+    placeholderLabel: "Placeholder",
+    logos: [
+      "Client logo 1 — pending authorization",
+      "Client logo 2 — pending authorization",
+      "Client logo 3 — pending authorization",
+    ],
+    testimonials: [
+      {
+        quote: "A short quote goes here, only with the client's explicit permission.",
+        attribution: "Name, role and company (pending)",
+      },
+      {
+        quote: "Another short quote goes here. Do not publish until you have the OK.",
+        attribution: "Name, role and company (pending)",
+      },
+    ],
+    note: "The repo already has logos prepared, still unmounted, in public/logos/. The Deel partnership is already mentioned in the blog. Fill this section only with each client's permission.",
+  },
+
   contact: {
     title: "The best hire starts with a conversation.",
     body: "Leave us your details and a specialist will get in touch. Or reach out directly through the channel you prefer.",
     calendar: "Book a call",
     whatsappAria: "Message us on WhatsApp",
     whatsappMessage: "Hi Meiba 👋 I'd like to tell you what my team needs and learn how you work.",
+    whatsappPlaceholder: "WhatsApp (number needed)",
+    calendarPlaceholder: "Calendar (link needed)",
+    channelsPending:
+      "To enable WhatsApp and booking, set VITE_WHATSAPP_NUMBER and VITE_CALENDAR_URL in the .env file. Until then these buttons are placeholders.",
   },
 
   form: {
@@ -360,6 +524,11 @@ const en: Translations = {
   notFound: {
     message: "We couldn't find this page.",
     home: "Back to home",
+  },
+
+  social: {
+    linkedin: "Meiba Talent on LinkedIn",
+    instagram: "Meiba Talent on Instagram",
   },
 
   footer: {
