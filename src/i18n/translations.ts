@@ -51,8 +51,26 @@ const es = {
     eyebrow: "Cómo trabajamos",
     title: "Rápido. Preciso. Humano.",
     body: "Combinamos headhunting con análisis profundo del mercado. No esperamos que el talento llegue — vamos a buscarlo.",
+    steps: [
+      {
+        title: "Brief",
+        body: "Nos contás el perfil y el contexto de tu equipo. Alineamos expectativas, urgencia y cultura antes de salir a buscar.",
+      },
+      {
+        title: "Mapeo",
+        body: "Mapeamos el mercado y contactamos al talento que no está respondiendo avisos. Vamos a buscarlo.",
+      },
+      {
+        title: "Terna",
+        body: "Te presentamos una primera terna en 72 horas, con criterio y contexto para que puedas decidir.",
+      },
+      {
+        title: "Seguimiento",
+        body: "Acompañamos la contratación y cubrimos la garantía de reemplazo a 90 días si hace falta.",
+      },
+    ],
     stats: ["Primera terna de candidatos", "Garantía de reemplazo", "Años de experiencia"],
-    cta: "Conocé el proceso completo",
+    cta: "Pedí una terna, sin costo inicial",
   },
 
   services: {
@@ -129,6 +147,29 @@ const es = {
 
   clients: {
     eyebrow: "Marcas que confían en nosotros",
+  },
+
+  socialProof: {
+    eyebrow: "Prueba social",
+    title: "Logos y testimonios, pendientes de autorización.",
+    body: "Esta franja está lista para mostrar prueba social. Hasta que confirmes clientes y citas, se ven placeholders. No hay nombres, logos ni métricas inventadas.",
+    placeholderLabel: "Placeholder",
+    logos: [
+      "Logo del cliente 1 — pendiente de autorización",
+      "Logo del cliente 2 — pendiente de autorización",
+      "Logo del cliente 3 — pendiente de autorización",
+    ],
+    testimonials: [
+      {
+        quote: "Acá va una cita corta, solo con autorización explícita del cliente.",
+        attribution: "Nombre, cargo y empresa (pendiente)",
+      },
+      {
+        quote: "Acá va otra cita corta. No publicar hasta tener el OK.",
+        attribution: "Nombre, cargo y empresa (pendiente)",
+      },
+    ],
+    note: "En el repo ya hay logos preparados, todavía sin montar, en public/logos/. La alianza con Deel está comunicada en el blog. Completá esta sección solo con permiso de cada cliente.",
   },
 
   contact: {
@@ -246,8 +287,26 @@ const en: Translations = {
     eyebrow: "How we work",
     title: "Fast. Precise. Human.",
     body: "We combine headhunting with deep market analysis. We don't wait for talent to show up — we go out and find it.",
+    steps: [
+      {
+        title: "Brief",
+        body: "You tell us about the role and your team. We align on expectations, urgency and culture before we start the search.",
+      },
+      {
+        title: "Mapping",
+        body: "We map the market and reach out to talent that isn't answering job ads. We go out and find them.",
+      },
+      {
+        title: "Shortlist",
+        body: "We present a first shortlist in 72 hours, with context and criteria so you can decide.",
+      },
+      {
+        title: "Follow-up",
+        body: "We support the hire and cover the 90-day replacement guarantee if needed.",
+      },
+    ],
     stats: ["First candidate shortlist", "Replacement guarantee", "Years of experience"],
-    cta: "See the full process",
+    cta: "Request a shortlist, no upfront cost",
   },
 
   services: {
@@ -323,6 +382,29 @@ const en: Translations = {
 
   clients: {
     eyebrow: "Brands that trust us",
+  },
+
+  socialProof: {
+    eyebrow: "Social proof",
+    title: "Logos and testimonials, pending authorization.",
+    body: "This strip is ready for social proof. Until you confirm clients and quotes, these are placeholders. No names, logos or metrics were invented.",
+    placeholderLabel: "Placeholder",
+    logos: [
+      "Client logo 1 — pending authorization",
+      "Client logo 2 — pending authorization",
+      "Client logo 3 — pending authorization",
+    ],
+    testimonials: [
+      {
+        quote: "A short quote goes here, only with the client's explicit permission.",
+        attribution: "Name, role and company (pending)",
+      },
+      {
+        quote: "Another short quote goes here. Do not publish until you have the OK.",
+        attribution: "Name, role and company (pending)",
+      },
+    ],
+    note: "The repo already has logos prepared, still unmounted, in public/logos/. The Deel partnership is already mentioned in the blog. Fill this section only with each client's permission.",
   },
 
   contact: {

@@ -10,7 +10,7 @@ const MethodologySection = () => {
   return (
     <section id="metodologia" className="py-24 lg:py-32 bg-azul-profundo text-background">
       <div className="container mx-auto px-6">
-        <div className="max-w-3xl mx-auto text-center">
+        <div className="max-w-5xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -23,17 +23,36 @@ const MethodologySection = () => {
             <h2 className="font-display text-4xl md:text-5xl font-bold leading-tight mb-6">
               {t.methodology.title}
             </h2>
-            <p className="text-lg opacity-60 mb-10 max-w-xl mx-auto leading-relaxed">
+            <p className="text-lg opacity-60 mb-14 max-w-xl mx-auto leading-relaxed">
               {t.methodology.body}
             </p>
           </motion.div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-16 text-left">
+            {t.methodology.steps.map((step, index) => (
+              <motion.div
+                key={step.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="border-t border-background/20 pt-5"
+              >
+                <span className="font-display text-3xl font-bold text-primary/80">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <h3 className="font-display text-xl font-semibold mt-3 mb-2">{step.title}</h3>
+                <p className="text-sm opacity-60 leading-relaxed">{step.body}</p>
+              </motion.div>
+            ))}
+          </div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="grid grid-cols-3 gap-8 mb-12"
+            className="grid grid-cols-3 gap-8 mb-12 max-w-3xl mx-auto"
           >
             {statValues.map((value, i) => (
               <div key={value}>

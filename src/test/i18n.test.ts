@@ -108,6 +108,9 @@ describe("traducciones", () => {
     const { es, en } = translations;
     expect(en.values.items).toHaveLength(es.values.items.length);
     expect(en.methodology.stats).toHaveLength(es.methodology.stats.length);
+    expect(en.methodology.steps).toHaveLength(es.methodology.steps.length);
+    expect(en.socialProof.logos).toHaveLength(es.socialProof.logos.length);
+    expect(en.socialProof.testimonials).toHaveLength(es.socialProof.testimonials.length);
     expect(en.services.items).toHaveLength(es.services.items.length);
     expect(en.segments.items).toHaveLength(es.segments.items.length);
     expect(en.specializations.areas.map((a) => a.roles.length)).toEqual(

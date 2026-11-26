@@ -1,6 +1,7 @@
 import Seo from "@/components/Seo";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
+import SocialProofSection from "@/components/SocialProofSection";
 import ValuesSection from "@/components/ValuesSection";
 import MethodologySection from "@/components/MethodologySection";
 import ServicesSection from "@/components/ServicesSection";
@@ -22,6 +23,7 @@ const Index = () => {
       />
       <Navbar />
       <HeroSection />
+      <SocialProofSection />
       <ValuesSection />
       <MethodologySection />
       <ServicesSection />
