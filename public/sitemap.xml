@@ -2,15 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://meibatalent.com.ar/</loc>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://meibatalent.com.ar/blog</loc>
-    <lastmod>2026-09-18</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://meibatalent.com.ar/blog/cuanto-cuesta-vacante-gerencial-abierta</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://meibatalent.com.ar/blog/como-contratar-gerente-logistica-argentina</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://meibatalent.com.ar/blog/roi-contratacion-costo-vacante-abierta</loc>
@@ -56,15 +68,27 @@
   </url>
   <url>
     <loc>https://meibatalent.com.ar/en</loc>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://meibatalent.com.ar/en/blog</loc>
-    <lastmod>2026-09-18</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://meibatalent.com.ar/en/blog/cuanto-cuesta-vacante-gerencial-abierta</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://meibatalent.com.ar/en/blog/como-contratar-gerente-logistica-argentina</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://meibatalent.com.ar/en/blog/roi-contratacion-costo-vacante-abierta</loc>
